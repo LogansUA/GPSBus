@@ -81,10 +81,9 @@
             </div>
 
             <div class="item">
-                <img src="images/google_play_logo.png" alt="Second slide">
+                <img src="images/google_play_large_logo.png" alt="Second slide">
                 <div class="container">
                     <div class="carousel-caption">
-                        <h1>Google Play</h1>
                         <p>Cras justo odio, dapibus ac facilisis in, egestas eget
                             quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor
                             id nibh ultricies vehicula ut id elit.</p>
@@ -94,7 +93,7 @@
             </div>
 
             <div class="item">
-                <img src="images/fb_logo.png" alt="Second slide">
+                <img src="images/fb_logo.png" alt="Third slide">
                 <div class="container">
                     <div class="carousel-caption">
                         <h1>Facebook</h1>
