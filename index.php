@@ -71,35 +71,33 @@
                 <img src="images/github_main_logo.png" alt="First slide">
                 <div class="container">
                     <div class="carousel-caption">
-                        <h1>Example headline.</h1>
-                        <p>Note: If you're viewing this page via a <code>file://</code>
-                            URL, the "next" and "previous" Glyphicon buttons on the left and right
-                            might not load/display properly due to web browser security rules.</p>
-                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+                        <p class="black">
+                            GPS Bus є повністю відкритим програмним забезпеченням з відкритим сирцевим кодом.
+                        </p>
+                        <p><a class="btn btn-lg btn-primary" href="https://github.com/LogansUA/GPSBus" role="button">Sign up today</a></p>
                     </div>
                 </div>
             </div>
 
             <div class="item">
-                <img src="images/google-play-store-logo.png" alt="Second slide">
+                <img src="images/google_play_large_logo.png" width="1200" alt="Second slide">
                 <div class="container">
                     <div class="carousel-caption">
-                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget
-                            quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor
-                            id nibh ultricies vehicula ut id elit.</p>
+                        <p class="black">
+                            Завантажуйте GPS Bus безкоштовно в найбільшому магазині додатків, Google Play.
+                        </p>
                         <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
                     </div>
                 </div>
             </div>
 
             <div class="item">
-                <img src="images/fb_logo.png" alt="Third slide">
+                <img src="images/facebook-logo-transparent.png" alt="Third slide">
                 <div class="container">
                     <div class="carousel-caption">
-                        <h1>Facebook</h1>
-                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget
-                            quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor
-                            id nibh ultricies vehicula ut id elit.</p>
+                        <p class="black">
+                            Переглядайте новини на нашій сторінці в соціальній мережі Facebook.
+                        </p>
                         <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
                     </div>
                 </div>

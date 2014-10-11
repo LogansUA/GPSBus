@@ -22,3 +22,11 @@ body {
     background-color: #5cb85c;
     border-color: #4cae4c;
 }
+
+.white {
+    background-color: #ffffff;
+}
+
+.black {
+    color: #000000;
+}
