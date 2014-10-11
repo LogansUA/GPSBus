@@ -63,7 +63,7 @@
         <!-- Indicators -->
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <!--<li class="" data-target="#myCarousel" data-slide-to="1"></li>-->
+            <li class="" data-target="#myCarousel" data-slide-to="1"></li>
         </ol>
         <div class="carousel-inner">
             <div class="item active">
@@ -75,6 +75,19 @@
                             URL, the "next" and "previous" Glyphicon buttons on the left and right
                             might not load/display properly due to web browser security rules.</p>
                         <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="images/google_play_logo.png" alt="Second slide">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>Google Play</h1>
+                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget
+                            quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor
+                            id nibh ultricies vehicula ut id elit.</p>
+                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
                     </div>
                 </div>
             </div>
