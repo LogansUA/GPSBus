@@ -81,7 +81,7 @@
             </div>
 
             <div class="item">
-                <img src="images/google_play_large_logo.png" alt="Second slide">
+                <img src="images/google-play-store-logo.png" alt="Second slide">
                 <div class="container">
                     <div class="carousel-caption">
                         <p>Cras justo odio, dapibus ac facilisis in, egestas eget
