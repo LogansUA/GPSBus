@@ -6,7 +6,7 @@
  * Time: 0:24
  */
 
-class Check {
+/*class Check {
     private $email;
     private $password;
 
@@ -19,6 +19,14 @@ class Check {
         echo "<h2 class=". "form-signin-heading" .">" . "Hello " . $this->$email . "!</h2>";
         echo "Works";
     }
-}
+}*/
+    function check() {
+        if ($_POST['signin']) {
+            header("Location: views/signin.php");
+        } elseif ($_POST['signup']) {
+            header("Location: views/signup.php");
+        }
+    }
+
 
 ?>

@@ -21,9 +21,8 @@
 <body>
 
     <?php
-        if ($_POST['signup']) {
-            header("Location: assets/Signin/index.php");
-        }
+        require_once('assets/Check.php');
+        check();
     ?>
 
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -51,8 +50,8 @@
                 </ul>
 
                 <form class="navbar-form navbar-right" role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
-                    <button type="submit" class="btn btn-success" name="signin">Sign in</button>
-                    <button type="submit" class="btn btn-success" name="signup">Sign up</button>
+                    <button type="submit" class="btn btn-registrate-color" name="signup" value="#">Sign up</button>
+                    <button type="submit" class="btn btn-login-color" name="signin white" value="#">Sign in</button>
                 </form>
             </div><!--/.navbar-collapse -->
         </div>
@@ -96,7 +95,7 @@
                 <img src="images/github_logo.png" alt="Generic placeholder image" style="width: 140px; height: 140px;">
                 <h2>GitHub</h2>
                 <p>GPS Bus є повністю відкритим програмним забезпеченням з відкритим сирцевим кодом.</p>
-                <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+                <p><a class="btn btn-default" href="https://github.com/LogansUA/GPSBus" role="button">View details »</a></p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4">
                 <img src="images/google_play_logo.png" alt="Generic placeholder image" style="width: 140px; height: 140px;">
@@ -108,7 +107,7 @@
                 <img src="images/fb_logo.png" alt="Generic placeholder image" style="width: 140px; height: 140px;">
                 <h2>Facebook</h2>
                 <p>Переглядайте новини на нашій сторінці в соціальній мережі Facebook.</p>
-                <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+                <p><a class="btn btn-default" href="" role="button">View details »</a></p>
             </div><!-- /.col-lg-4 -->
         </div><!-- /.row -->
 

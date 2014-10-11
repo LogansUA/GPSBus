@@ -1,8 +1,24 @@
-.header {
-    margin: 0;
-    padding: 0;
+﻿
+/* =============================================================
+   GENERAL STYLES
+ ============================================================ */
+body {
+    font-family: 'Open Sans', sans-serif;
+   
 }
 
-.carousel-image {
-    background-color: #ffffff;
+.pad-top {
+    padding-top:40px;
+}
+
+.btn-login-color {
+    color: #fff;
+    background-color: #8daecd;
+    border-color: #a3c6e5;
+}
+
+.btn-registrate-color {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
 }
