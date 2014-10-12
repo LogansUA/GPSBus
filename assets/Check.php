@@ -20,11 +20,12 @@
         echo "Works";
     }
 }*/
-    function check() {
-        if ($_POST['signin']) {
-            header("Location: views/signin.php");
-        } elseif ($_POST['signup']) {
-            header("Location: views/signup.php");
-        }
+function check() {
+    if ($_POST['signin']) {
+        header("Location: views/signin.php");
+        die();
+    } elseif ($_POST['signup']) {
+        header("Location: views/signup.php");
+        die();
     }
-?>
+}
