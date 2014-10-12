@@ -51,7 +51,7 @@
 
                 <form class="navbar-form navbar-right" role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
                     <button type="submit" class="btn btn-registrate-color" name="signup" value="#">Sign up</button>
-                    <button type="submit" class="btn btn-login-color" name="signin white" value="#">Sign in</button>
+                    <button type="submit" class="btn btn-login-color" name="signin" value="#">Sign in</button>
                 </form>
             </div><!--/.navbar-collapse -->
         </div>
