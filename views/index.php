@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
     <link rel="icon" href="../images/icon.png">
 
-    <title>Jumbotron Template for Bootstrap</title>
-
-    <!-- Bootstrap core CSS -->
+    <!-- Bootstrap theme -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
     <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap-theme.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
+    <!-- Custom theme -->
     <link href="../css/jumbotron.css" rel="stylesheet">
+    <link href="../css/carousel.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
 
-    <script src="../js/ie-emulation-modes-warning.js"></script>
+    <title>GPSBus</title>
 
+    <style type="text/css" id="holderjs-style"></style>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="../js/google-map.js" ></script>
 </head>
 
 <body>
@@ -26,58 +26,101 @@
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">GPS Bus</a>
+                <a class="navbar-brand" href="index.php">GPS Bus</a>
             </div>
-            <div class="navbar-right">
-                <a class="navbar-brand" href="#"><?php echo"Logans"; ?></a>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Nav header</li>
+                            <li><a href="#">Separated link</a></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div class="navbar-right">
+                    <a class="navbar-brand" href="#"><?php echo"Logans"; ?></a>
+                </div>
             </div><!--/.navbar-collapse -->
         </div>
     </div>
 
-<!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron">
+
     <div class="container">
-        <h1>Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-primary btn-lg" role="button">Learn more »</a></p>
-    </div>
-</div>
 
-<div class="container">
-    <!-- Example row of columns -->
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="http://getbootstrap.com/examples/jumbotron/#" role="button">View details »</a></p>
+        <div class="main-panel">
+            <div id="map_canvas" class="map"></div>
+
+            <div class="routes">
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>14</li>
+                    <li>15</li>
+                    <li>16</li>
+                    <li>17</li>
+                    <li>18</li>
+                    <li>19</li>
+                    <li>20</li>
+                    <li>22</li>
+                    <li>23</li>
+                    <li>24</li>
+                    <li>25a</li>
+                    <li>26</li>
+                    <li>27</li>
+                    <li>28</li>
+                    <li>29</li>
+                    <li>30</li>
+                    <li>32</li>
+                    <li>33</li>
+                    <li>34</li>
+                    <li>35</li>
+                    <li>36</li>
+                    <li>37</li>
+                    <li>38</li>
+                    <li>39</li>
+                    <li>40</li>
+                    <li>41</li>
+                    <li>42</li>
+                    <li>43</li>
+                    <li>44</li>
+                    <li>44a</li>
+                    <li>45</li>
+                    <li>46</li>
+                    <li>47</li>
+                    <li>48</li>
+                    <li>49</li>
+                    <li>50</li>
+                    <li>52</li>
+                    <li>53</li>
+                    <li>54</li>
+                </ul>
+            </div>
         </div>
-        <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="http://getbootstrap.com/examples/jumbotron/#" role="button">View details »</a></p>
-        </div>
-        <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <p><a class="btn btn-default" href="http://getbootstrap.com/examples/jumbotron/#" role="button">View details »</a></p>
-        </div>
-    </div>
+        <hr>
 
-    <hr>
-
-    <footer>
-        <p>© Company 2014</p>
-    </footer>
-</div> <!-- /container -->
+        <footer>
+            <p>© Company 2014</p>
+        </footer>
+    </div> <!-- /container -->
 
 
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="./index_files/jquery.min.js"></script>
-<script src="./index_files/bootstrap.min.js"></script>
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="./index_files/ie10-viewport-bug-workaround.js"></script>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
 
 
 </body></html>

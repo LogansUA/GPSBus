@@ -30,3 +30,23 @@ body {
 .black {
     color: #000000;
 }
+
+#map_canvas {
+    width: 70%;
+    height: 550px;
+    background-color: #CCC;
+}
+
+.map {
+    float: right;
+}
+
+.routes {
+    float: left;
+    width: 30%;
+}
+
+.main-panel {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
