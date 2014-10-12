@@ -8,6 +8,7 @@
     <link href="../css/bootstrap.css" rel="stylesheet">
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/bootstrap-theme.css" rel="stylesheet">
+    <link href="../css/bootstrap-admin-theme.css" rel="stylesheet">
 
     <!-- Custom theme -->
     <link href="../css/jumbotron.css" rel="stylesheet">
@@ -60,49 +61,50 @@
         <div class="main-panel">
             <div id="map_canvas" class="map"></div>
 
-            <div class="routes">
-                <ul>
-                    <li>1</li>
-                    <li>2</li>
-                    <li>14</li>
-                    <li>15</li>
-                    <li>16</li>
-                    <li>17</li>
-                    <li>18</li>
-                    <li>19</li>
-                    <li>20</li>
-                    <li>22</li>
-                    <li>23</li>
-                    <li>24</li>
-                    <li>25a</li>
-                    <li>26</li>
-                    <li>27</li>
-                    <li>28</li>
-                    <li>29</li>
-                    <li>30</li>
-                    <li>32</li>
-                    <li>33</li>
-                    <li>34</li>
-                    <li>35</li>
-                    <li>36</li>
-                    <li>37</li>
-                    <li>38</li>
-                    <li>39</li>
-                    <li>40</li>
-                    <li>41</li>
-                    <li>42</li>
-                    <li>43</li>
-                    <li>44</li>
-                    <li>44a</li>
-                    <li>45</li>
-                    <li>46</li>
-                    <li>47</li>
-                    <li>48</li>
-                    <li>49</li>
-                    <li>50</li>
-                    <li>52</li>
-                    <li>53</li>
-                    <li>54</li>
+            <!--<div class="routes">
+                <ul id="routes">
+                    <li>19</li>                    <li>20</li>
+                    <li>22</li>                    <li>23</li>
+                    <li>24</li>                    <li>25a</li>
+                    <li>26</li>                    <li>27</li>
+                    <li>28</li>                    <li>29</li>
+                    <li>30</li>                    <li>32</li>
+                    <li>33</li>                    <li>34</li>
+                    <li>35</li>                    <li>36</li>
+                    <li>37</li>                    <li>38</li>
+                    <li>39</li>                    <li>40</li>
+                    <li>41</li>                    <li>42</li>
+                    <li>43</li>                    <li>44</li>
+                    <li>44a</li>                    <li>45</li>
+                    <li>46</li>                    <li>47</li>
+                    <li>48</li>                    <li>49</li>
+                    <li>50</li>                    <li>52</li>
+                    <li>53</li>                    <li>54</li>
+                </ul>
+            </div>-->
+            <div class="col-md-2 bootstrap-admin-col-left routes">
+                <ul class="nav navbar-collapse collapse bootstrap-admin-navbar-side">
+                    <li class="active">
+                        <a href="#"><i class="glyphicon glyphicon-chevron-right"></i> 1 (Катіон - Озерна)</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="glyphicon glyphicon-chevron-right"></i> 2</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="glyphicon glyphicon-chevron-right"></i> 14</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="glyphicon glyphicon-chevron-right"></i> 15</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="glyphicon glyphicon-chevron-right"></i> 16</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="glyphicon glyphicon-chevron-right"></i> 17</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="glyphicon glyphicon-chevron-right"></i> 18</a>
+                    </li>
                 </ul>
             </div>
         </div>

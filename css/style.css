@@ -4,7 +4,6 @@
  ============================================================ */
 body {
     font-family: 'Open Sans', sans-serif;
-   
 }
 
 .pad-top {
@@ -44,6 +43,7 @@ body {
 .routes {
     float: left;
     width: 30%;
+    padding: 0;
 }
 
 .main-panel {
