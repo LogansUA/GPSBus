@@ -27,6 +27,4 @@
             header("Location: views/signup.php");
         }
     }
-
-
 ?>
