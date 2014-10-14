@@ -71,9 +71,9 @@
                                 }
                             }
                             ?>
-                            <button class="btn btn-lg btn-primary btn-block" type="submit" name="sign_in" value="#">Авторизуватися</button>
+                            <button class="btn btn-lg btn-success btn-block" type="submit" name="sign_in" value="#">Авторизуватися</button>
                             <hr />
-                            Ще не зареєстровані?  <a href="#" >Тоді вам сюди!</a>
+                            Ще не зареєстровані?  <a href="signup.php" >Тоді вам сюди!</a>
                         </form>
                     </div>
 

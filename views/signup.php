@@ -9,13 +9,13 @@
     <!--[if IE]>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <![endif]-->
-    <title>Bootstrap Registration Page</title>
+    <title>Реєстрація</title>
+
     <!-- BOOTSTRAP CORE STYLE CSS -->
     <link href="../css/bootstrap.css" rel="stylesheet" />
-    <!-- FONTAWESOME STYLE CSS -->
     <link href="../css/font-awesome.min.css" rel="stylesheet" />
-    <!-- CUSTOM STYLE CSS -->
     <link href="../css/style.css" rel="stylesheet" />
+
     <!-- GOOGLE FONT -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 
@@ -24,59 +24,54 @@
     <div class="container">
         <div class="row text-center pad-top ">
             <div class="col-md-12">
-                <h2>Bootstrap Registration Page</h2>
+                <h2>Сторінка реєстрації</h2>
             </div>
         </div>
-        <div class="row  pad-top">
 
+        <div class="row  pad-top">
             <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <strong>   Register Yourself </strong>
+                        <strong>Реєстрація</strong>
                     </div>
                     <div class="panel-body">
-                        <form role="form">
+                        <form class="form-signin" role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                             <br/>
                             <div class="form-group input-group">
                                 <span class="input-group-addon"><i class="fa fa-circle-o-notch"  ></i></span>
-                                <input type="text" class="form-control" placeholder="Your Name" />
+                                <input type="text" class="form-control" placeholder="Ім’я" />
                             </div>
                             <div class="form-group input-group">
                                 <span class="input-group-addon"><i class="fa fa-tag"  ></i></span>
-                                <input type="text" class="form-control" placeholder="Desired Username" />
+                                <input type="text" class="form-control" placeholder="Нікнейм" />
                             </div>
                             <div class="form-group input-group">
                                 <span class="input-group-addon">@</span>
-                                <input type="text" class="form-control" placeholder="Your Email" />
+                                <input type="text" class="form-control" placeholder="Email" />
                             </div>
                             <div class="form-group input-group">
                                 <span class="input-group-addon"><i class="fa fa-lock"  ></i></span>
-                                <input type="password" class="form-control" placeholder="Enter Password" />
+                                <input type="password" class="form-control" placeholder="Пароль" />
                             </div>
                             <div class="form-group input-group">
                                 <span class="input-group-addon"><i class="fa fa-lock"  ></i></span>
-                                <input type="password" class="form-control" placeholder="Retype Password" />
+                                <input type="password" class="form-control" placeholder="Повторіть пароль" />
                             </div>
 
-                            <a href="#" class="btn btn-success ">Register Me</a>
+                            <button class="btn btn-lg btn-primary btn-block" type="submit" name="sign_in" value="#">Зареєструватися</button>
                             <hr />
-                            Already Registered ?  <a href="#" >Login here</a>
+                            Вже заєстровані? <a href="signin.php">Тоді заходьте!</a>
                         </form>
                     </div>
-
                 </div>
             </div>
-
-
         </div>
     </div>
 
-
     <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
-    <!-- CORE JQUERY  -->
-    <script src="assets/plugins/jquery-1.10.2.js"></script>
+    <script src="../js/jquery-1.10.2.js"></script>
     <!-- BOOTSTRAP SCRIPTS  -->
-    <script src="assets/plugins/bootstrap.js"></script>
+    <script src="../js/bootstrap.js"></script>
 
 </body>
 </html>
