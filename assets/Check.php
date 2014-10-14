@@ -1,13 +1,9 @@
 <?php
 function check() {
-
-    $registration = $_POST['signup'];
-    $login = $_POST['signin'];
-
-    if ($login == "login") {
+    if (isset($_POST['signin'])) {
         header("Location: views/signin.php");
         die();
-    } elseif ($registration == "registration") {
+    } elseif (isset($_POST['signup'])) {
         header("Location: views/signup.php");
         die();
     }

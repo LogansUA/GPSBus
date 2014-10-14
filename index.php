@@ -32,10 +32,10 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li class="dropdown">
+                    <li class="active"><a href="#">Головна</a></li>
+                    <li><a href="#">Про нас</a></li>
+                    <li><a href="#">Контакти</a></li>
+                    <!--<li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="#">Action</a></li>
@@ -46,12 +46,12 @@
                             <li><a href="#">Separated link</a></li>
                             <li><a href="#">One more separated link</a></li>
                         </ul>
-                    </li>
+                    </li>-->
                 </ul>
 
                 <form class="navbar-form navbar-right" role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
-                    <button type="submit" class="btn btn-registrate-color" name="signup" value="#">Sign up</button>
-                    <button type="submit" class="btn btn-login-color" name="signin" value="#">Sign in</button>
+                    <button type="submit" class="btn btn-primary" name="signup" value="#">Зареєструватися</button>
+                    <button type="submit" class="btn btn-success getawayfromme" name="signin" value="#">Вхід</button>
                 </form>
             </div><!--/.navbar-collapse -->
         </div>
@@ -60,93 +60,44 @@
     <!-- Carousel
     ================================================== -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li class="" data-target="#myCarousel" data-slide-to="1"></li>
-            <li class="" data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
         <div class="carousel-inner">
             <div class="item active">
-                <img src="images/github_main_logo.png" alt="First slide">
+                <img class="slide" src="images/GPSBus_logo.png" alt="slide">
                 <div class="container">
                     <div class="carousel-caption">
+                        <h1 class="black">GPS Bus</h1>
                         <p class="black">
-                            GPS Bus є повністю відкритим програмним забезпеченням з відкритим сирцевим кодом.
+                            GPS Bus - це простий додаток, який дозволяє відслідковувати рух маршрутного таксі, вашого міста.
                         </p>
-                        <p><a class="btn btn-lg btn-primary" href="https://github.com/LogansUA/GPSBus" role="button">Sign up today</a></p>
-                    </div>
-                </div>
-            </div>
 
-            <div class="item">
-                <img src="images/google_play_large_logo.png" width="1200" alt="Second slide">
-                <div class="container">
-                    <div class="carousel-caption">
-                        <p class="black">
-                            Завантажуйте GPS Bus безкоштовно в найбільшому магазині додатків, Google Play.
+                        <p>
+                            <form class="navbar-form" role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+                                <button type="submit" class="btn btn-lg btn-primary" name="signup" value="#">Зареєструватися</button>
+                            </form>
                         </p>
-                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="item">
-                <img src="images/facebook-logo-transparent.png" alt="Third slide">
-                <div class="container">
-                    <div class="carousel-caption">
-                        <p class="black">
-                            Переглядайте новини на нашій сторінці в соціальній мережі Facebook.
-                        </p>
-                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
                     </div>
                 </div>
             </div>
         </div>
-        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
     </div><!-- /.carousel -->
 
-    <!-- Marketing messaging and featurettes
-================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
-
     <div class="container marketing">
-
-        <!-- Three columns of text below the carousel -->
-        <div class="row">
-            <div class="col-lg-4">
-                <img src="images/github_logo.png" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-                <h2>GitHub</h2>
-                <p>GPS Bus є повністю відкритим програмним забезпеченням з відкритим сирцевим кодом.</p>
-                <p><a class="btn btn-default" href="https://github.com/LogansUA/GPSBus" role="button">View details »</a></p>
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-4">
-                <img src="images/google_play_logo.png" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-                <h2>Google Play</h2>
-                <p>Завантажуйте GPS Bus безкоштовно в найбільшому магазині додатків, Google Play.</p>
-                <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-4">
-                <img src="images/fb_logo.png" alt="Generic placeholder image" style="width: 140px; height: 140px;">
-                <h2>Facebook</h2>
-                <p>Переглядайте новини на нашій сторінці в соціальній мережі Facebook.</p>
-                <p><a class="btn btn-default" href="" role="button">View details »</a></p>
-            </div><!-- /.col-lg-4 -->
-        </div><!-- /.row -->
-
-
-        <!-- START THE FEATURETTES -->
-
-        <hr class="featurette-divider">
-
         <div class="row featurette">
             <div class="col-md-7">
-                <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-                <p class="lead">Donec ullamcorper nulla non metus auctor
-                    fringilla. Vestibulum id ligula porta felis euismod semper. Praesent
-                    commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus,
-                    tellus ac cursus commodo.</p>
+                <h2 class="featurette-heading">Що це взагалі таке?</h2>
+                <p class="lead">
+                    Траплялися з вами випадки, коли ви запізнювались на роботу, навчання, побачення,
+                    чи на будь-яку іншу важливо зустріч?
+                </p>
+
+                <p class="lead">
+                    Напевно так, ну з ким не буває? Ось для того саме, щоб запобігти цьому, створений додаток GPS Bus.
+                </p>
+
+                <p class="lead">
+                    GPS Bus - безкоштовний додаток, який відслідковує дійсні маршрутні таксі та
+                    обраховує час прибуття на поточну зупинку.
+                </p>
             </div>
             <div class="col-md-5">
                 <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjI1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojYWFhO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjMxcHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+NTAweDUwMDwvdGV4dD48L3N2Zz4=" class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="500x500">
@@ -187,6 +138,29 @@
 
         <!-- /END THE FEATURETTES -->
 
+        <div class="row">
+            <div class="col-lg-4">
+                <img src="images/github_logo.png" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+                <h2>GitHub</h2>
+                <p>GPS Bus є повністю відкритим програмним забезпеченням з відкритим сирцевим кодом.</p>
+                <p><a class="btn btn-default" href="https://github.com/LogansUA/GPSBus" role="button">View details »</a></p>
+            </div>
+            <div class="col-lg-4">
+                <img src="images/google_play_logo.png" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+                <h2>Google Play</h2>
+                <p>Завантажуйте GPS Bus безкоштовно в найбільшому магазині додатків, Google Play.</p>
+                <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+            </div>
+            <div class="col-lg-4">
+                <img src="images/fb_logo.png" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+                <h2>Facebook</h2>
+                <p>Переглядайте новини на нашій сторінці в соціальній мережі Facebook.</p>
+                <p><a class="btn btn-default" href="" role="button">View details »</a></p>
+            </div>
+        </div>
+
+
+        <hr class="featurette-divider">
 
         <!-- FOOTER -->
         <footer>
