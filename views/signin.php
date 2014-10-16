@@ -49,26 +49,31 @@
                                 <input type="password" class="form-control" placeholder="Enter Password" name="password" />
                             </div>
                             <?php
-                            require_once('../assets/login.php');
+                            require_once('../assets/Classes/Data.php');
 
                             if (isset($_POST['sign_in'])) {
                                 $email = $_POST['email'];
                                 $password = $_POST['password'];
 
-                                $user = new CUser($email, $password);
+                                $correctEmail = true;
+                                $correctPassword = true;
 
-                                if ($user->isAdmin()) {
-                                    header("Location: ../views/index.php");
-                                    die();
+                                $data = new Data();
+
+                                if (!$data->isRegistered($email, $password)) {
+                                    getError();
                                 } else {
-                                    ?>
-
-                                    <div class="alert alert-danger" role="alert">
-                                        <strong>Опа!</strong> Невірний Email, або пароль.
-                                    </div>
-
-                                <?php
+                                    header('Location: index.php');
+                                    die();
                                 }
+                            }
+
+                            function getError() {
+                            ?>
+                                <div class="alert alert-danger" role="alert">
+                                    <strong>Опа!</strong> Невірний Email, або пароль.
+                                </div>
+                            <?php
                             }
                             ?>
                             <button class="btn btn-lg btn-success btn-block" type="submit" name="sign_in" value="#">Авторизуватися</button>
