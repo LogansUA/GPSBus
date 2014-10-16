@@ -10,6 +10,7 @@ require_once("Database.php");
 class Data {
     private
         $controller;
+
     public
         $firstName,
         $nickName,
@@ -17,50 +18,50 @@ class Data {
         $password;
 
         function __construct() {
-            $controller = new Database();
+            $this->controller = new Database();
         }
 
         function selectFirstName() {
             $this->firstName[] = array();
 
-            $result = $this->controller->selectData('SELECT firstName FROM Driver');
+            $result = $this->controller->selectData('SELECT `firstName` FROM `Driver`');
             $i = 0;
 
             while ($item = mysqli_fetch_array($result)) {
-                $this->firstName[$i] = $item;
+                $this->firstName[$i] = $item['firstName'];
                 $i++;
             }
         }
         function selectNickName() {
             $this->nickName[] = array();
 
-            $result = $this->controller->selectData('SELECT nickName FROM Driver');
+            $result = $this->controller->selectData('SELECT `nickName` FROM `Driver`');
             $i = 0;
 
             while ($item = mysqli_fetch_array($result)) {
-                $this->nickName[$i] = $item;
+                $this->nickName[$i] = $item['nickName'];
                 $i++;
             }
         }
         function selectEmail() {
             $this->email[] = array();
 
-            $result = $this->controller->selectData('SELECT email FROM Driver');
+            $result = $this->controller->selectData("SELECT `email` FROM `Driver`");
             $i = 0;
 
             while ($item = mysqli_fetch_array($result)) {
-                $this->email[$i] = $item;
+                $this->email[$i] = $item['email'];
                 $i++;
             }
         }
         function selectPassword() {
             $this->password[] = array();
 
-            $result = $this->controller->selectData('SELECT password FROM Driver');
+            $result = $this->controller->selectData('SELECT `password` FROM `Driver`');
             $i = 0;
 
             while ($item = mysqli_fetch_array($result)) {
-                $this->password[$i] = $item;
+                $this->password[$i] = $item['password'];
                 $i++;
             }
         }

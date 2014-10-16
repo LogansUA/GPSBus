@@ -59,6 +59,8 @@
                                 $correctPassword = true;
 
                                 $data = new Data();
+                                $data->selectEmail();
+                                $data->selectPassword();
 
                                 if (!$data->isRegistered($email, $password)) {
                                     getError();
