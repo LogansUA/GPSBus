@@ -42,11 +42,11 @@
                             <br/>
                             <div class="form-group input-group">
                                 <span class="input-group-addon">@</span>
-                                <input type="text" class="form-control" autofocus="" placeholder="Your Email" name="email" />
+                                <input type="text" class="form-control" autofocus="" placeholder="Email" name="email" />
                             </div>
                             <div class="form-group input-group">
-                                <span class="input-group-addon"><i class="fa fa-lock"  ></i></span>
-                                <input type="password" class="form-control" placeholder="Enter Password" name="password" />
+                                <span class="input-group-addon"><i class="fa fa-lock lock"></i></span>
+                                <input type="password" class="form-control" placeholder="Пароль" name="password" />
                             </div>
                             <?php
                             require_once('../assets/Classes/Data.php');
@@ -59,23 +59,19 @@
                                 $correctPassword = true;
 
                                 $data = new Data();
-                                $data->selectEmail();
-                                $data->selectPassword();
+                                //$data->selectEmail();
+                                //$data->selectPassword();
 
-                                if (!$data->isRegistered($email, $password)) {
-                                    getError();
+                                if (!empty($email) && !empty($password)) {
+                                    if ($data->isRegistered($email, $password)) {
+                                        header('Location: index.php');
+                                        die();
+                                    } else {
+                                        $data->getError("Невірний пароль, або імейл.");
+                                    }
                                 } else {
-                                    header('Location: index.php');
-                                    die();
+                                    $data->getError("Не всі поля заповнені.");
                                 }
-                            }
-
-                            function getError() {
-                            ?>
-                                <div class="alert alert-danger" role="alert">
-                                    <strong>Опа!</strong> Невірний Email, або пароль.
-                                </div>
-                            <?php
                             }
                             ?>
                             <button class="btn btn-lg btn-success btn-block" type="submit" name="sign_in" value="#">Авторизуватися</button>
