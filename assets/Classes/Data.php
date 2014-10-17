@@ -17,61 +17,90 @@ class Data {
         $email,
         $password;
 
-        function __construct() {
-            $this->controller = new Database();
+    public function __construct() {
+        $this->controller = new Database();
+        $this->selectEmail();
+        $this->selectPassword();
+    }
+
+    public function selectFirstName() {
+        $this->firstName[] = array();
+
+        $result = $this->controller->selectData('SELECT `firstName` FROM `Driver`');
+        $i = 0;
+
+        while ($item = mysqli_fetch_array($result)) {
+            $this->firstName[$i] = $item['firstName'];
+            $i++;
         }
+    }
+    public function selectNickName() {
+        $this->nickName[] = array();
 
-        function selectFirstName() {
-            $this->firstName[] = array();
+        $result = $this->controller->selectData('SELECT `nickName` FROM `Driver`');
+        $i = 0;
 
-            $result = $this->controller->selectData('SELECT `firstName` FROM `Driver`');
-            $i = 0;
+        while ($item = mysqli_fetch_array($result)) {
+            $this->nickName[$i] = $item['nickName'];
+            $i++;
+        }
+    }
+    private function selectEmail() {
+        $this->email[] = array();
 
-            while ($item = mysqli_fetch_array($result)) {
-                $this->firstName[$i] = $item['firstName'];
-                $i++;
+        $result = $this->controller->selectData("SELECT `email` FROM `Driver`");
+        $i = 0;
+
+        while ($item = mysqli_fetch_array($result)) {
+            $this->email[$i] = $item['email'];
+            $i++;
+        }
+    }
+    private function selectPassword() {
+        $this->password[] = array();
+
+        $result = $this->controller->selectData('SELECT `password` FROM `Driver`');
+        $i = 0;
+
+        while ($item = mysqli_fetch_array($result)) {
+            $this->password[$i] = $item['password'];
+            $i++;
+        }
+    }
+
+    public function isRegistered($email, $password) {
+        for ($i = 0; $i < count($this->email); $i++) {
+            if (($this->email[$i] == $email) && ($this->password[$i] == $password)) {
+                return true;
             }
         }
-        function selectNickName() {
-            $this->nickName[] = array();
 
-            $result = $this->controller->selectData('SELECT `nickName` FROM `Driver`');
-            $i = 0;
+        return false;
+    }
 
-            while ($item = mysqli_fetch_array($result)) {
-                $this->nickName[$i] = $item['nickName'];
-                $i++;
+    public function getError($message) {
+    ?>
+        <div class="alert alert-danger" role="alert">
+            <strong>Опа!</strong> <?php echo $message; ?>
+        </div>
+    <?php
+    }
+
+    public function getRegistredMessage() {
+    ?>
+        <div class="alert alert-success" role="alert">
+            <strong>Чудово!</strong> Ви вдачно зареєструвалися.
+        </div>
+    <?php
+    }
+
+    public function isNewUser($email) {
+        for ($i = 0; $i < count($this->email); $i++) {
+            if ($email == $this->email[$i]) {
+                return false;
             }
         }
-        function selectEmail() {
-            $this->email[] = array();
 
-            $result = $this->controller->selectData("SELECT `email` FROM `Driver`");
-            $i = 0;
-
-            while ($item = mysqli_fetch_array($result)) {
-                $this->email[$i] = $item['email'];
-                $i++;
-            }
-        }
-        function selectPassword() {
-            $this->password[] = array();
-
-            $result = $this->controller->selectData('SELECT `password` FROM `Driver`');
-            $i = 0;
-
-            while ($item = mysqli_fetch_array($result)) {
-                $this->password[$i] = $item['password'];
-                $i++;
-            }
-        }
-        function isRegistered($email, $password) {
-            for ($i = 0; $i < count($this->email); $i++) {
-                if (($this->email[$i] == $email) && ($this->password[$i] == $password)) {
-                    return true;
-                }
-            }
-
-            return false;
-        }
+        return true;
+    }
 } 

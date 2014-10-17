@@ -62,3 +62,21 @@ h1 {
 .getawayfromme {
     margin-left: 5px;
 }
+
+i.lock {
+    padding-left: 3px;
+    padding-right: 2px;
+}
+
+i.tag {
+    padding-left: 1px;
+    padding-right: 2px;
+}
+
+i.name {
+    padding-right: 1px;
+}
+
+i.email {
+    padding-right: 1px;
+}

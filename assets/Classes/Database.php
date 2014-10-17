@@ -30,6 +30,7 @@ class Database {
         }
 
         function insertData($query) {
-            $this->db->query($query);
+            $this->db->query($query) or
+                die("Insert query error! " . mysqli_error($this->db));
         }
 } 

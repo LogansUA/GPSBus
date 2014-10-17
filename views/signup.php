@@ -38,27 +38,68 @@
                         <form class="form-signin" role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                             <br/>
                             <div class="form-group input-group">
-                                <span class="input-group-addon"><i class="fa fa-circle-o-notch"  ></i></span>
-                                <input type="text" class="form-control" placeholder="Ім’я" />
+                                <span class="input-group-addon"><i class="fa fa-circle-o-notch name"  ></i></span>
+                                <input type="text" class="form-control" placeholder="Ім’я" name="firstName" />
                             </div>
                             <div class="form-group input-group">
-                                <span class="input-group-addon"><i class="fa fa-tag"  ></i></span>
-                                <input type="text" class="form-control" placeholder="Нікнейм" />
+                                <span class="input-group-addon"><i class="fa fa-tag tag"  ></i></span>
+                                <input type="text" class="form-control" placeholder="Нікнейм" name="nickName" />
                             </div>
                             <div class="form-group input-group">
-                                <span class="input-group-addon">@</span>
-                                <input type="text" class="form-control" placeholder="Email" />
+                                <span class="input-group-addon"><i class="email">@</i></span>
+                                <input type="text" class="form-control" placeholder="Email" name="email" />
                             </div>
                             <div class="form-group input-group">
-                                <span class="input-group-addon"><i class="fa fa-lock"  ></i></span>
-                                <input type="password" class="form-control" placeholder="Пароль" />
+                                <span class="input-group-addon"><i class="fa fa-lock lock"  ></i></span>
+                                <input type="password" class="form-control" placeholder="Пароль" name="password" />
                             </div>
                             <div class="form-group input-group">
-                                <span class="input-group-addon"><i class="fa fa-lock"  ></i></span>
-                                <input type="password" class="form-control" placeholder="Повторіть пароль" />
+                                <span class="input-group-addon"><i class="fa fa-lock lock"  ></i></span>
+                                <input type="password" class="form-control" placeholder="Повторіть пароль" name="rePassword" />
                             </div>
 
-                            <button class="btn btn-lg btn-primary btn-block" type="submit" name="sign_in" value="#">Зареєструватися</button>
+                            <?php
+                            require_once("../assets/Classes/Database.php");
+                            require_once("../assets/Classes/Data.php");
+
+                            if (isset($_POST['sign_up'])) {
+                                $firstName = $_POST['firstName'];
+                                $nickName = $_POST['nickName'];
+                                $email = $_POST['email'];
+                                $password = $_POST['password'];
+                                $rePassword = $_POST['rePassword'];
+
+                                $database = new Database();
+                                $data = new Data();
+
+                                if (!empty($firstName) &
+                                    !empty($nickName)  &
+                                    !empty($email)     &
+                                    !empty($password)  &
+                                    !empty($rePassword)) {
+
+                                    if ($data->isNewUser($email)) {
+
+                                        if ($password == $rePassword) {
+                                            $database->insertData("INSERT INTO `Driver`(`firstName`, `nickName`, `email`, `password`)
+                                                               VALUES ('$firstName', '$nickName', '$email', '$password')");
+                                            header("Location: signin.php");
+                                            die();
+                                        } else {
+                                            $data->getError("Паролі повинні співпадати.");
+                                        }
+                                    } else {
+                                        $data->getError("Email $email вже зареєстрований.");
+                                    }
+
+                                } else {
+                                    $data->getError("Ви ввели не всі дані.");
+                                }
+                            }
+                            ?>
+
+                            <button class="btn btn-lg btn-primary btn-block" type="submit" name="sign_up" value="#">Зареєструватися</button>
+
                             <hr />
                             Вже заєстровані? <a href="signin.php">Тоді заходьте!</a>
                         </form>
