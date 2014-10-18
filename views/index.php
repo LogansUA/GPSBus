@@ -62,10 +62,23 @@
                 <!-- left, vertical navbar -->
                 <div class="adaptiveCol-MD-2 ">
                     <div class="col-lg-10 routeSpinner">
+                        <label type="Text">Маршрут:</label>
                         <select id="select02" class="selectize-select" style="width: 230px">
                             <?php
-                            for ($i = 0; $i < 50; $i++) {
-                                echo "<option value='$i'>$i</option>";
+                            require_once("../assets/Classes/Database.php");
+
+                            $data = new Database();
+                            $result = $data->selectData("SELECT `routeName` FROM `Route`");
+                            $routeName[] = array();
+                            $i = 0;
+
+                            while ($item = mysqli_fetch_array($result)) {
+                                $routeName[$i] = $item['routeName'];
+                                $i++;
+                            }
+
+                            foreach ($routeName as $route) {
+                                echo "<option value='$route'>$route</option>";
                             }
                             ?>
                         </select>

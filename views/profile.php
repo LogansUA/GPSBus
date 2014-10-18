@@ -119,8 +119,20 @@
                                                     <div class="col-lg-10">
                                                         <select id="select02" class="selectize-select" style="width: 250px">
                                                             <?php
-                                                            for ($i = 0; $i < 50; $i++) {
-                                                                echo "<option value='$i'>$i</option>";
+                                                            require_once("../assets/Classes/Database.php");
+
+                                                            $data = new Database();
+                                                            $resultRoute = $data->selectData("SELECT `routeName` FROM `Route`");
+                                                            $routeName[] = array();
+                                                            $i = 0;
+
+                                                            while ($item = mysqli_fetch_array($resultRoute)) {
+                                                                $routeName[$i] = $item['routeName'];
+                                                                $i++;
+                                                            }
+
+                                                            foreach ($routeName as $route) {
+                                                                echo "<option value='$route'>$route</option>";
                                                             }
                                                             ?>
                                                         </select>
