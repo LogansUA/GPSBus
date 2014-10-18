@@ -19,11 +19,12 @@ class Data {
 
     public function __construct() {
         $this->controller = new Database();
+        $this->selectNickName();
         $this->selectEmail();
         $this->selectPassword();
     }
 
-    public function selectFirstName() {
+    private function selectFirstName() {
         $this->firstName[] = array();
 
         $result = $this->controller->selectData('SELECT `firstName` FROM `Driver`');
@@ -34,7 +35,7 @@ class Data {
             $i++;
         }
     }
-    public function selectNickName() {
+    private function selectNickName() {
         $this->nickName[] = array();
 
         $result = $this->controller->selectData('SELECT `nickName` FROM `Driver`');

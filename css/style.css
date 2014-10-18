@@ -31,19 +31,13 @@ body {
 }
 
 #map_canvas {
-    width: 70%;
-    height: 550px;
+    width: 100%;
+    height: 500px;
     background-color: #CCC;
 }
 
 .map {
     float: right;
-}
-
-.routes {
-    float: left;
-    width: 30%;
-    padding: 0;
 }
 
 .main-panel {
@@ -80,3 +74,28 @@ i.name {
 i.email {
     padding-right: 1px;
 }
+
+a.headText, a.headText:hover {
+    text-decoration: none;
+    color: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+div.adaptiveContainer {
+    width: 90%;
+}
+
+div.adaptiveCol-MD-10 {
+    width: 70%;
+    padding: 0;
+}
+
+div.adaptiveCol-MD-2 {
+    width: 30%;
+}
+
+div.routeSpinner {
+    margin-right: 16%;
+}
+

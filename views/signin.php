@@ -8,15 +8,16 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../images/icon.png">
-
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <![endif]-->
     <title>Авторизація</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="../css/bootstrap.css" rel="stylesheet">
-    <!-- FONTAWESOME STYLE CSS -->
+    <!-- BOOTSTRAP CORE STYLE CSS -->
+    <link href="../css/bootstrap.css" rel="stylesheet" />
     <link href="../css/font-awesome.min.css" rel="stylesheet" />
-    <!-- CUSTOM STYLE CSS -->
     <link href="../css/style.css" rel="stylesheet" />
+
     <!-- GOOGLE FONT -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 
@@ -27,7 +28,7 @@
     <div class="container">
         <div class="row text-center pad-top ">
             <div class="col-md-12">
-                <h2>Сторінка авторизації</h2>
+                <h2><a href="<?php echo $_SERVER['PHP_SELF']; ?>" class="headText">Сторінка авторизації</a></h2>
             </div>
         </div>
         <div class="row  pad-top">
@@ -41,7 +42,7 @@
                         <form class="form-signin" role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                             <br/>
                             <div class="form-group input-group">
-                                <span class="input-group-addon">@</span>
+                                <span class="input-group-addon"><i class="email">@</i></span>
                                 <input type="text" class="form-control" autofocus="" placeholder="Email" name="email" />
                             </div>
                             <div class="form-group input-group">
@@ -76,7 +77,8 @@
                             ?>
                             <button class="btn btn-lg btn-success btn-block" type="submit" name="sign_in" value="#">Авторизуватися</button>
                             <hr />
-                            Ще не зареєстровані?  <a href="signup.php" >Тоді вам сюди!</a>
+                            <p>Ще не зареєстровані?  <a href="signup.php" >Тоді реєструйтесь!</a></p>
+                            <p>Не можете згадати дані? <a href="#">Відновіть їх.</a></p>
                         </form>
                     </div>
 

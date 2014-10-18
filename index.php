@@ -21,7 +21,7 @@
 <body>
 
     <?php
-        require_once('assets/Check.php');
+        require_once("assets/Check.php");
         check();
     ?>
 
@@ -32,7 +32,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Головна</a></li>
+                    <li><a href="views/index.php">Головна</a></li>
                     <li><a href="#">Про нас</a></li>
                     <li><a href="#">Контакти</a></li>
                     <!--<li class="dropdown">
@@ -69,13 +69,6 @@
                         <p class="black">
                             GPS Bus - це простий додаток, який дозволяє відслідковувати рух маршрутного таксі, вашого міста.
                         </p>
-                        <!--
-                        <p>
-                            <form class="navbar-form" role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
-                                <button type="submit" class="btn btn-lg btn-primary" name="signup" value="#">Зареєструватися</button>
-                            </form>
-                        </p>
-                        -->
                     </div>
                 </div>
             </div>
@@ -101,7 +94,7 @@
                 </p>
             </div>
             <div class="col-md-5">
-                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjI1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojYWFhO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjMxcHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+NTAweDUwMDwvdGV4dD48L3N2Zz4=" class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="500x500">
+                <img src="images/question_mark_logo_01.png" class="featurette-image img-responsive" alt="500x500">
             </div>
         </div>
         <!--
