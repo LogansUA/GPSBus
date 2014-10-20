@@ -21,8 +21,10 @@
 <body>
 
     <?php
-        require_once("assets/Check.php");
-        check();
+        require_once("assets/Classes/Check.php");
+        $check = new Check();
+
+        $check->entryIntoService();
     ?>
 
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">

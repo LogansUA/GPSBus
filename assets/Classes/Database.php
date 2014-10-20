@@ -1,13 +1,13 @@
 <?php
 require_once("app_config.php");
 
-class Database {
+class Database
+{
     private
         $db;
 
     public function __construct() {
-        $connect = new Connect();
-        $connectInfo = $connect->getConnectionInfo();
+        $connectInfo = getConnectInfo();
 
         $this->db = mysqli_connect($connectInfo['host'],
             $connectInfo['user'],
