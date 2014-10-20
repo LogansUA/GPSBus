@@ -50,7 +50,9 @@
                                 <input type="password" class="form-control" placeholder="Пароль" name="password" />
                             </div>
                             <?php
-                            require_once('../assets/Classes/Data.php');
+                            require_once("../assets/Classes/Messages.php");
+                            require_once("../assets/Classes/Check.php");
+                            require_once("../assets/Classes/Driver.php");
 
                             if (isset($_POST['sign_in'])) {
                                 $email = $_POST['email'];
@@ -59,19 +61,22 @@
                                 $correctEmail = true;
                                 $correctPassword = true;
 
-                                $data = new Data();
-                                //$data->selectEmail();
-                                //$data->selectPassword();
+                                $messages = new Messages();
+                                $check = new Check();
+                                $driver = new Driver();
+
+                                $isRegistered = $check->isRegistered($email, $driver->getEmail(),
+                                                                     $password, $driver->getPassword());
 
                                 if (!empty($email) && !empty($password)) {
-                                    if ($data->isRegistered($email, $password)) {
+                                    if ($isRegistered) {
                                         header('Location: index.php');
                                         die();
                                     } else {
-                                        $data->getError("Невірний пароль, або імейл.");
+                                        $messages->getErrorBar("Невірний пароль, або імейл.");
                                     }
                                 } else {
-                                    $data->getError("Не всі поля заповнені.");
+                                    $messages->getErrorBar("Не всі поля заповнені.");
                                 }
                             }
                             ?>

@@ -67,8 +67,8 @@
                             <?php
                             require_once("../assets/Classes/Database.php");
 
-                            $data = new Database();
-                            $result = $data->selectData("SELECT `routeName` FROM `Route`");
+                            $database = new Database();
+                            $result = $database->selectData("SELECT `routeName` FROM `Route`");
                             $routeName[] = array();
                             $i = 0;
 

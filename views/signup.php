@@ -63,7 +63,9 @@
 
                             <?php
                             require_once("../assets/Classes/Database.php");
-                            require_once("../assets/Classes/Data.php");
+                            require_once("../assets/Classes/Messages.php");
+                            require_once("../assets/Classes/Check.php");
+                            require_once("../assets/Classes/Driver.php");
 
                             if (isset($_POST['sign_up'])) {
                                 $firstName = $_POST['firstName'];
@@ -73,7 +75,9 @@
                                 $rePassword = $_POST['rePassword'];
 
                                 $database = new Database();
-                                $data = new Data();
+                                $messages = new Messages();
+                                $check = new Check();
+                                $driver = new Driver();
 
                                 if (!empty($firstName) &
                                     !empty($nickName)  &
@@ -81,7 +85,7 @@
                                     !empty($password)  &
                                     !empty($rePassword)) {
 
-                                    if ($data->isNewUser($email)) {
+                                    if ($check->isNewUser($email, $driver->getEmail())) {
 
                                         if ($password == $rePassword) {
                                             $database->insertData("INSERT INTO `Driver`(`firstName`, `nickName`, `email`, `password`)
@@ -89,14 +93,14 @@
                                             header("Location: signin.php");
                                             die();
                                         } else {
-                                            $data->getError("Паролі повинні співпадати.");
+                                            $messages->getErrorBar("Паролі повинні співпадати.");
                                         }
                                     } else {
-                                        $data->getError("Email $email вже зареєстрований.");
+                                        $messages->getErrorBar("Email $email вже зареєстрований.");
                                     }
 
                                 } else {
-                                    $data->getError("Ви ввели не всі дані.");
+                                    $messages->getErrorBar("Ви ввели не всі дані.");
                                 }
                             }
                             ?>
