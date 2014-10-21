@@ -1,5 +1,5 @@
 <?php
-include_once("assets/Classes/Check.php");
+include_once("assets/Classes/CheckClass.php");
 ?>
 <!DOCTYPE html>
 <html>
