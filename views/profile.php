@@ -1,3 +1,6 @@
+<?php
+include_once("../assets/Classes/DataBaseClass.php");
+?>
 <!DOCTYPE html>
 <html>
     <head lang="en">
@@ -119,10 +122,8 @@
                                                     <div class="col-lg-10">
                                                         <select id="select02" class="selectize-select" style="width: 250px">
                                                             <?php
-                                                            require_once("../assets/Classes/Database.php");
-
                                                             $database = new Database();
-                                                            $resultRoute = $database->selectData("SELECT `routeName` FROM `Route`");
+                                                            $resultRoute = $database->selectData('SELECT `routeName` FROM `Route`');
                                                             $routeName[] = array();
                                                             $i = 0;
 

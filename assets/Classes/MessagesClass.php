@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: logans
- * Date: 16.10.14
- * Time: 19:49
- */
-
-class Messages {
-
+class Messages
+{
     public function __construct() {
 
     }
@@ -43,7 +36,4 @@ class Messages {
         </div>
     <?php
     }
-
-
-
 } 

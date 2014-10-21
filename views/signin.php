@@ -1,3 +1,11 @@
+<?php
+include_once("../assets/Classes/MessagesClass.php");
+include_once("../assets/Classes/CheckClass.php");
+include_once("../assets/Classes/DriverClass.php");
+include_once("../assets/Classes/LoginClass.php");
+include_once("../assets/Classes/Redirect.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,9 +58,6 @@
                                 <input type="password" class="form-control" placeholder="Пароль" name="password" />
                             </div>
                             <?php
-                            require_once("../assets/Classes/Messages.php");
-                            require_once("../assets/Classes/Check.php");
-                            require_once("../assets/Classes/Driver.php");
 
                             if (isset($_POST['sign_in'])) {
                                 $email = $_POST['email'];
@@ -64,14 +69,21 @@
                                 $messages = new Messages();
                                 $check = new Check();
                                 $driver = new Driver();
+                                $login = new Login();
 
-                                $isRegistered = $check->isRegistered($email, $driver->getEmail(),
-                                                                     $password, $driver->getPassword());
+                                $driverEmailArray = $driver->getEmail();
+                                $driverPasswordArray = $driver->getPassword();
+
+                                $isRegistered = $check->isRegistered($email, $driverEmailArray,
+                                                                     $password, $driverPasswordArray);
 
                                 if (!empty($email) && !empty($password)) {
                                     if ($isRegistered) {
-                                        header('Location: index.php');
-                                        die();
+                                        if ($login->isAdmin($email)) {
+                                            htmlRedirect("404.php");
+                                        } else {
+                                            htmlRedirect("index.php");
+                                        }
                                     } else {
                                         $messages->getErrorBar("Невірний пароль, або імейл.");
                                     }

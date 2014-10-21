@@ -1,16 +1,17 @@
 <?php
-class Check {
+include_once("Redirect.php");
+
+class Check
+{
     public function __construct() {
 
     }
 
     public function entryIntoService() {
         if (isset($_POST['signin'])) {
-            header("Location: ../views/signin.php");
-            die();
+            htmlRedirect("../views/signin.php");
         } elseif (isset($_POST['signup'])) {
-            header("Location: ../views/signup.php");
-            die();
+            htmlRedirect("../views/signup.php");
         }
     }
 

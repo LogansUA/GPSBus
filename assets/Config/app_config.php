@@ -5,6 +5,6 @@ function getConnectInfo() {
         'host' => 'localhost',
         'user' => 'root',
         'password' => '2g0e0l4o2004',
-        'database' => 'GPSBus'
+        'database' => 'GPS Bus'
     );
 }

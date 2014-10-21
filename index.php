@@ -1,3 +1,6 @@
+<?php
+include_once("assets/Classes/Check.php");
+?>
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -21,7 +24,6 @@
 <body>
 
     <?php
-        require_once("assets/Classes/Check.php");
         $check = new Check();
 
         $check->entryIntoService();

@@ -1,7 +1,8 @@
 <?php
-require_once("Database.php");
+include_once("DataBaseClass.php");
 
-class Driver {
+class Driver
+{
     private
         $controller;
 
