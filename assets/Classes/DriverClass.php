@@ -1,13 +1,13 @@
 <?php
 include_once("DataBaseClass.php");
 
-class Driver
+class DriverClass
 {
     private
         $controller;
 
     public function __construct() {
-        $this->controller = new Database();
+        $this->controller = new DataBaseClass();
     }
 
     public function getFirstName() {

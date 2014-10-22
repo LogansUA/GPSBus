@@ -1,7 +1,7 @@
 <?php
 include_once("Redirect.php");
 
-class Check
+class CheckClass
 {
     public function __construct() {
 

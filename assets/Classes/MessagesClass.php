@@ -1,5 +1,5 @@
 <?php
-class Messages
+class MessagesClass
 {
     public function __construct() {
 

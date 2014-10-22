@@ -1,5 +1,5 @@
 <?php
-class Database
+class DataBaseClass
 {
     private
         $db;

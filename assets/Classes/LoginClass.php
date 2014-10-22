@@ -1,13 +1,13 @@
 <?php
 include_once("DataBaseClass.php");
 
-class Login
+class LoginClass
 {
     private
         $dataBase;
 
     public function __construct() {
-        $this->dataBase = new Database();
+        $this->dataBase = new DataBaseClass();
     }
 
     public function isAdmin($email) {
