@@ -1,5 +1,7 @@
 <?php
-include_once("assets/Classes/Check.php");
+function __autoload($className) {
+    require("assets/Classes/" . $className . ".php");
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -24,7 +26,7 @@ include_once("assets/Classes/Check.php");
 <body>
 
     <?php
-        $check = new Check();
+        $check = new CheckClass();
 
         $check->entryIntoService();
     ?>

@@ -1,5 +1,7 @@
 <?php
-include_once("../assets/Classes/DataBaseClass.php");
+function __autoload($className) {
+    require("../assets/Classes/" . $className . ".php");
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -99,7 +101,7 @@ include_once("../assets/Classes/DataBaseClass.php");
                                                 <div class="form-group">
                                                     <label class="col-lg-2 control-label" for="select02">Стать:</label>
                                                     <div class="col-lg-10">
-                                                        <select id="select02" class="selectize-select" style="width: 250px">
+                                                        <select id="select02" class="selectize-select" style="width: 400px">
                                                             <option value="male">Чоловіча</option>
                                                             <option value="female">Жіноча</option>
                                                         </select>
@@ -120,20 +122,16 @@ include_once("../assets/Classes/DataBaseClass.php");
                                                 <div class="form-group">
                                                     <label class="col-lg-2 control-label" for="select02">Маршрут:</label>
                                                     <div class="col-lg-10">
-                                                        <select id="select02" class="selectize-select" style="width: 250px">
+                                                        <select id="select02" class="selectize-select" style="width: 400px">
                                                             <?php
-                                                            $database = new Database();
-                                                            $resultRoute = $database->selectData('SELECT `routeName` FROM `Route`');
-                                                            $routeName[] = array();
-                                                            $i = 0;
+                                                            $route = new RouteClass();
 
-                                                            while ($item = mysqli_fetch_array($resultRoute)) {
-                                                                $routeName[$i] = $item['routeName'];
-                                                                $i++;
-                                                            }
+                                                            $routeName = $route->getRouteName();
+                                                            $stops = $route->getStops();
 
-                                                            foreach ($routeName as $route) {
-                                                                echo "<option value='$route'>$route</option>";
+                                                            for ($i = 0; $i < count($routeName); $i++) {
+                                                                $line = $routeName[$i] . " " . $stops[$i];
+                                                                echo "<option value='$routeName[$i]'>$line</option>";
                                                             }
                                                             ?>
                                                         </select>

@@ -1,9 +1,7 @@
 <?php
-include_once("../assets/Classes/MessagesClass.php");
-include_once("../assets/Classes/CheckClass.php");
-include_once("../assets/Classes/DriverClass.php");
-include_once("../assets/Classes/LoginClass.php");
-include_once("../assets/Classes/Redirect.php");
+function __autoload($className) {
+    require("../assets/Classes/" . $className . ".php");
+}
 ?>
 
 <!DOCTYPE html>
@@ -66,10 +64,10 @@ include_once("../assets/Classes/Redirect.php");
                                 $correctEmail = true;
                                 $correctPassword = true;
 
-                                $messages = new Messages();
-                                $check = new Check();
-                                $driver = new Driver();
-                                $login = new Login();
+                                $messages = new MessagesClass();
+                                $check = new CheckClass();
+                                $driver = new DriverClass();
+                                $login = new LoginClass();
 
                                 $driverEmailArray = $driver->getEmail();
                                 $driverPasswordArray = $driver->getPassword();

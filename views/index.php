@@ -1,5 +1,7 @@
 <?php
-include_once("../assets/Classes/DataBaseClass.php");
+function __autoload($className) {
+    require("../assets/Classes/" . $className . ".php");
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -68,7 +70,7 @@ include_once("../assets/Classes/DataBaseClass.php");
                         <label type="Text">Маршрут:</label>
                         <select id="select02" class="selectize-select" style="width: 230px">
                             <?php
-                            $database = new Database();
+                            $database = new DataBaseClass();
                             $result = $database->selectData('SELECT `routeName` FROM `Route`');
                             $routeName[] = array();
                             $i = 0;

@@ -1,9 +1,7 @@
 <?php
-include_once("../assets/Classes/DataBaseClass.php");
-include_once("../assets/Classes/MessagesClass.php");
-include_once("../assets/Classes/CheckClass.php");
-include_once("../assets/Classes/DriverClass.php");
-include_once("../assets/Classes/Redirect.php");
+function __autoload($className) {
+    require('../assets/Classes/' . $className . '.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -77,10 +75,10 @@ include_once("../assets/Classes/Redirect.php");
                                     $password = $_POST['password'];
                                     $rePassword = $_POST['rePassword'];
 
-                                    $database = new Database();
-                                    $messages = new Messages();
-                                    $check = new Check();
-                                    $driver = new Driver();
+                                    $database = new DataBaseClass();
+                                    $messages = new MessagesClass();
+                                    $check = new CheckClass();
+                                    $driver = new DriverClass();
 
                                     if (!empty($firstName) &
                                         !empty($nickName)  &
@@ -91,8 +89,8 @@ include_once("../assets/Classes/Redirect.php");
                                         if ($check->isNewUser($email, $driver->getEmail())) {
 
                                             if ($password == $rePassword) {
-                                                $database->insertData("INSERT INTO `Driver`(`firstName`, `nickName`, `email`, `password`)
-                                                                   VALUES ('$firstName', '$nickName', '$email', '$password')");
+                                                $database->insertData("INSERT INTO `Driver`(`firstName`, `nickName`, `email`, `password`, `group`)
+                                                                   VALUES ('$firstName', '$nickName', '$email', '$password', 'users')");
                                                 htmlRedirect("signin.php");
                                             } else {
                                                 $messages->getErrorBar("Паролі повинні співпадати.");
