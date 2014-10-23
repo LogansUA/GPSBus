@@ -1,5 +1,5 @@
 <?php
-include_once("Redirect.php");
+include_once(__DIR__ . "/../Redirect.php");
 
 class CheckClass
 {

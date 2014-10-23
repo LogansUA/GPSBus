@@ -68,7 +68,8 @@ function __autoload($className) {
                 <div class="adaptiveCol-MD-2 ">
                     <div class="col-lg-10 routeSpinner">
                         <label type="Text">Маршрут:</label>
-                        <select id="select02" class="selectize-select" style="width: 230px">
+                        <select id="select02" class="selectize-select" onchange="onChange()" style="width: 230px">
+                            <option value="0">Не вибрано</option>"
                             <?php
                             $database = new DataBaseClass();
                             $result = $database->selectData('SELECT `routeName` FROM `Route`');
@@ -83,9 +84,21 @@ function __autoload($className) {
                             foreach ($routeName as $route) {
                                 echo "<option value='$route'>$route</option>";
                             }
-
                             ?>
                         </select>
+                        <div id="jsConsole">
+
+                        </div>
+
+                        <script>
+                            var optionValue;
+                            function onChange() {
+                                optionValue = document.getElementsByTagName("option")[0].getAttribute("value");
+                                //document.getElementById("jsConsole").innerHTML = optionValue;
+
+                                displayRoute(optionValue);
+                            }
+                        </script>
                     </div>
                 </div>
 

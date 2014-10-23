@@ -1,11 +1,7 @@
 <?php
-<<<<<<< HEAD
 function __autoload($className) {
     require("assets/Classes/" . $className . ".php");
 }
-=======
-include_once("assets/Classes/CheckClass.php");
->>>>>>> ebab9cf753236d36af388d335eea090004d0ac59
 ?>
 <!DOCTYPE html>
 <html>
