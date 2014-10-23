@@ -83,36 +83,25 @@ function addLine() {
 function deleteLine() {
     flightPath.setMap(null);
 }
-/*
-var goldStar = {
-    path: '../images/facebook_logo.jpg',
-    fillColor: "yellow",
-    fillOpacity: 0.8,
-    scale: 0.1,
-    strokeColor: "blue",
-    strokeWeight: 2
-};
-
-var pinIcon = new google.maps.MarkerImage(
-    "../images/icon.png",
-    null,
-    null,
-    null,
-    new google.maps.Size(30, 30)
-);
 
 function addMarker(location) {
+    var pinIcon = new google.maps.MarkerImage(
+        "../images/icon.png",
+        null,
+        null,
+        null,
+        new google.maps.Size(30, 30)
+    );
+
     marker = new google.maps.Marker({
         position: location,
         map: map,
         icon: pinIcon,
         draggable: true,
-        animation: google.maps.Animation.DROP
+        animation: google.maps.Animation.BOUNCE
     });
 
     markersArray.push(marker);
 }
-    //marker.setMap(map);
-    */
 
 google.maps.event.addDomListener(window, 'load', initialize);

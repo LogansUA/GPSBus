@@ -70,7 +70,7 @@ function __autoload($className) {
                         <label type="Text">Маршрут:</label>
                         <select id="select02" class="selectize-select" onchange="onChange()" style="width: 230px">
                             <option value="0">Не вибрано</option>"
-                            <?php
+                            <?php 
                             $database = new DataBaseClass();
                             $result = $database->selectData('SELECT `routeName` FROM `Route`');
                             $routeName[] = array();
