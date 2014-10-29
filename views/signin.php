@@ -2,6 +2,8 @@
 function __autoload($className) {
     require(__DIR__ . "/../assets/Classes/" . $className . ".php");
 }
+
+session_start();
 ?>
 
 <!DOCTYPE html>

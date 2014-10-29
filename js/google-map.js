@@ -4,14 +4,17 @@
 var map;
 var flightPath;
 var markersArray = [];
+var Khmelnitsky = new google.maps.LatLng(49.4165828, 26.989422);
 
 function initialize() {
+    directionsDisplay = new google.maps.DirectionsRenderer();
     var mapOptions = {
-        center: new google.maps.LatLng(49.4165828, 26.989422),
+        center: Khmelnitsky,
         zoom: 12,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+    directionsDisplay.setMap(map);
 
     google.maps.event.addListener(map, 'click', function(event) {
        addMarker(event.latLng);
@@ -98,7 +101,7 @@ function addMarker(location) {
         map: map,
         icon: pinIcon,
         draggable: true,
-        animation: google.maps.Animation.DROP/*BOUNCE*/
+        animation: google.maps.Animation./*DROP*/BOUNCE
     });
     /*
     setTimeout(function() {
