@@ -2,6 +2,7 @@
 function __autoload($className) {
     require("../assets/Classes/" . $className . ".php");
 }
+require("../assets/Redirect.php");
 
 session_start();
 ?>
@@ -51,20 +52,22 @@ session_start();
                 </ul>
 
                 <form class="navbar-right" role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
-                    <a class="navbar-brand" href="profile.php">
-                        <?php
-                        echo $_SESSION['nickName'];
-                        ?>
-                    </a>
+                    <?php
+                    if (isset($_SESSION['idDriver'])) {
+                        echo "<a class='navbar-brand' href='profile.php'>" . $_SESSION['nickName'] . "</a>";
+                    }
+                    ?>
 
-                    <button type="button" class="btn btn-danger" style="margin-bottom: 0; margin-top: 7%" name="exit">Вихід</button>
                     <?php
                     if (isset($_POST['exit'])) {
-                        if (!isset($_SESSION['idDriver'])) {
+                        if (isset($_SESSION['idDriver'])) {
                             session_destroy();
-                        } elseif (isset($_SESSION['idDriver'])) {
-                            echo "<a class='navbar-brand active' href=" . session_destroy() . ">Вихід </a>";
+                            htmlRedirect("index.php");
                         }
+                    }
+
+                    if (isset($_SESSION['idDriver'])) {
+                        echo "<button type='submit' class='btn btn-danger exit' name='exit'>Вихід</button>";
                     }
                     ?>
                 </form>
