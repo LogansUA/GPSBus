@@ -2,6 +2,7 @@
 function __autoload($className) {
     require("../assets/Classes/" . $className . ".php");
 }
+session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -45,11 +46,18 @@ function __autoload($className) {
                     </ul>
 
                     <div class="navbar-right">
-                        <a class="navbar-brand active" href="#">
-                            <?php
-                            echo "NickName";
-                            ?>
-                        </a>
+                        <?php
+                        if (isset($_SESSION['idDriver'])) {
+                            echo "<a class='navbar-brand active' href='profile.php'>" . $_SESSION['nickName'] . "</a>";
+                        }
+                        ?>
+
+                        <?php
+                        if (!isset($_SESSION['idDriver'])) {
+                            session_destroy();
+                            echo "<a class='navbar-brand active' href='profile.php'>Вихід</a>";
+                        }
+                        ?>
                     </div>
                 </div><!--/.navbar-collapse -->
             </div>
@@ -83,13 +91,13 @@ function __autoload($className) {
                                         <div class="text-muted bootstrap-admin-box-title">Профіль</div>
                                     </div>
                                     <div class="bootstrap-admin-no-table-panel-content bootstrap-admin-panel-content collapse in">
-                                        <form class="form-horizontal">
+                                        <form class="form-horizontal" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
                                             <fieldset>
                                                 <legend>Інформація</legend>
                                                 <div class="form-group">
                                                     <label class="col-lg-2 control-label" for="typeahead">Ім’я:</label>
                                                     <div class="col-lg-10">
-                                                        <input type="text" class="form-control col-md-6" id="typeahead" />
+                                                        <input type="text" class="form-control col-md-6" id="typeahead" value="<?php echo $_SESSION['firstName']; ?>" name="firstName" />
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -110,13 +118,13 @@ function __autoload($className) {
                                                 <div class="form-group">
                                                     <label class="col-lg-2 control-label" for="typeahead">Мережеве ім’я:</label>
                                                     <div class="col-lg-10">
-                                                        <input type="text" class="form-control col-md-6" id="typeahead" />
+                                                        <input type="text" class="form-control col-md-6" id="typeahead" value="<?php echo $_SESSION['nickName']; ?>" name="nickName" />
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="col-lg-2 control-label" for="typeahead">Email:</label>
                                                     <div class="col-lg-10">
-                                                        <input type="text" class="form-control col-md-6" id="typeahead" />
+                                                        <input type="text" class="form-control col-md-6" id="typeahead" value="<?php echo $_SESSION['email']; ?>" />
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -132,6 +140,19 @@ function __autoload($className) {
                                                             for ($i = 0; $i < count($routeName); $i++) {
                                                                 $line = $routeName[$i] . " " . $stops[$i];
                                                                 echo "<option value='$routeName[$i]'>$line</option>";
+                                                            }
+
+                                                            if (isset($_POST["save"])) {
+                                                                $_SESSION['firstName'] = $_POST['firstName'];
+
+                                                                $database = new DataBaseClass();
+
+                                                                $idDriver = $_SESSION['idDriver'];
+                                                                $firstName = $_POST['firstName'];
+                                                                $nickName = $_POST['nickName'];
+
+                                                                $database->insertData("UPDATE `Driver` SET `firstName`='$firstName', `nickName`='$nickName'
+                                                                                       WHERE `idDriver`=$idDriver");
                                                             }
                                                             ?>
                                                         </select>

@@ -2,6 +2,8 @@
 function __autoload($className) {
     require("../assets/Classes/" . $className . ".php");
 }
+
+session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -48,13 +50,24 @@ function __autoload($className) {
                     <li><a href="#">Контакти</a></li>
                 </ul>
 
-                <div class="navbar-right">
+                <form class="navbar-right" role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
                     <a class="navbar-brand" href="profile.php">
                         <?php
-                        echo "NickName";
+                        echo $_SESSION['nickName'];
                         ?>
                     </a>
-                </div>
+
+                    <button type="button" class="btn btn-danger" style="margin-bottom: 0; margin-top: 7%" name="exit">Вихід</button>
+                    <?php
+                    if (isset($_POST['exit'])) {
+                        if (!isset($_SESSION['idDriver'])) {
+                            session_destroy();
+                        } elseif (isset($_SESSION['idDriver'])) {
+                            echo "<a class='navbar-brand active' href=" . session_destroy() . ">Вихід </a>";
+                        }
+                    }
+                    ?>
+                </form>
             </div><!--/.navbar-collapse -->
         </div>
     </div>
@@ -70,7 +83,7 @@ function __autoload($className) {
                         <label type="Text">Маршрут:</label>
                         <select id="select02" class="selectize-select" onchange="onChange()" style="width: 230px">
                             <option value="0">Не вибрано</option>"
-                            <?php 
+                            <?php
                             $database = new DataBaseClass();
                             $result = $database->selectData('SELECT `routeName` FROM `Route`');
                             $routeName[] = array();

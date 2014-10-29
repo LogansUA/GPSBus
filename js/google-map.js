@@ -98,9 +98,13 @@ function addMarker(location) {
         map: map,
         icon: pinIcon,
         draggable: true,
-        animation: google.maps.Animation.BOUNCE
+        animation: google.maps.Animation.DROP/*BOUNCE*/
     });
-
+    /*
+    setTimeout(function() {
+        marker.setAnimation(null)
+    }, 3000);
+    */
     markersArray.push(marker);
 }
 
