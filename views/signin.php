@@ -9,30 +9,11 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <link rel="icon" href="../images/icon.png">
-        <!--[if IE]>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <![endif]-->
+        <?php include "../assets/Resources/Header.php"; ?>
         <title>Авторизація</title>
-
-        <!-- BOOTSTRAP CORE STYLE CSS -->
-        <link href="../css/bootstrap.css" rel="stylesheet" />
-        <link href="../css/font-awesome.min.css" rel="stylesheet" />
-        <link href="../css/style.css" rel="stylesheet" />
-
-        <!-- GOOGLE FONT -->
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-
-        <script src="../js/ie-emulation-modes-warning.js"></script>
     </head>
 
-    <body>
+    <body style="padding-top: 0;">
         <div class="container">
             <div class="row text-center pad-top ">
                 <div class="col-md-12">
