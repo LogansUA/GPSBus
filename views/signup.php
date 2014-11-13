@@ -1,24 +1,11 @@
 <?php
-function __autoload($className) { /*
-    $extensions = array(".php", ".class.php", ".inc");
-    $paths = explode(PATH_SEPARATOR, get_include_path());
-    $className = str_replace("_" , DIRECTORY_SEPARATOR, $className);
-    foreach ($paths as $path) {
-        $filename = $path . DIRECTORY_SEPARATOR . $className;
-        foreach ($extensions as $ext) {
-            if (is_readable($filename . $ext)) {
-                require_once $filename . $ext;
-                break;
-            }
-        }
-    }*/
-    require('../assets/Classes/' . $className . '.php');
-}
+include_once("../assets/autoload.php");
+include_once("../assets/redirect.php");
 ?>
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <?php include "../assets/Resources/Header.php"; ?>
+<html>
+    <head lang="en">
+        <?php include_once("../assets/resources/Header.php"); ?>
         <title>Реєстрація</title>
     </head>
 
@@ -95,7 +82,6 @@ function __autoload($className) { /*
                                     } else {
                                         $messages->getErrorBar("Ви ввели не всі дані.");
                                     }
-                                    $database->closeConnect();
                                 }
                                 ?>
 
@@ -111,9 +97,9 @@ function __autoload($className) { /*
         </div>
 
         <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
-        <script src="../js/jquery-1.10.2.js"></script>
+        <script src="js/jquery-1.10.2.js"></script>
         <!-- BOOTSTRAP SCRIPTS  -->
-        <script src="../js/bootstrap.js"></script>
+        <script src="js/bootstrap.js"></script>
 
     </body>
 </html>

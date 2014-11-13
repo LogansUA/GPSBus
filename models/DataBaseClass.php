@@ -20,6 +20,10 @@ class DataBaseClass
         $this->insertData('SET character_set_results="utf8"');
     }
 
+    public function __destruct() {
+        $this->db->close();
+    }
+
     public function selectData($query) {
         $result = $this->db->query($query) or
             die("Select query error! " . mysqli_error($this->db));
@@ -29,11 +33,6 @@ class DataBaseClass
     public function insertData($query) {
         $this->db->query($query) or
             die("Insert query error! " . mysqli_error($this->db));
-        return 0;
-    }
-
-    public function closeConnect() {
-        $this->db->close();
         return 0;
     }
 

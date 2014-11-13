@@ -1,15 +1,14 @@
 <?php
-function __autoload($className) {
-    require(__DIR__ . "/../assets/Classes/" . $className . ".php");
-}
+include_once("../assets/autoload.php");
+include_once("../assets/redirect.php");
 
 session_start();
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <?php include "../assets/Resources/Header.php"; ?>
+<html>
+    <head lang="en">
+        <?php include_once("../assets/resources/Header.php"); ?>
         <title>Авторизація</title>
     </head>
 
@@ -86,7 +85,7 @@ session_start();
         </div>
 
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-        <script src="../js/ie10-viewport-bug-workaround.js"></script>
+        <script src="js/ie10-viewport-bug-workaround.js"></script>
 
     </body>
 </html>
