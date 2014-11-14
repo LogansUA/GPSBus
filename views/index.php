@@ -44,13 +44,11 @@ session_start();
                                 function onClick(element) {
                                     var optionValue = document.getElementsByTagName("h4")[element].innerHTML;
                                     var listItem = document.getElementById("routeList").getElementsByTagName("a");
-                                    /*
-                                    for (var i = 0; i < listItem.count; i++) {
-                                        if (listItem[i].className == "list-group-item active") {
-                                            listItem[i].className = "list-group-item";
-                                        }
+                                    var it = document.getElementById("routeList").getElementsByClassName("list-group-item active");
+                                    if (it.length !== 0) {
+                                        it[0].className = "list-group-item";
                                     }
-                                    */
+
                                     listItem[element].className += " active";
                                     displayRoute(optionValue);
                                 }

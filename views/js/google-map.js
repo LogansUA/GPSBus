@@ -32,7 +32,7 @@ function displayRoute(route) {
             flightPlanCoordinates = [
                 new google.maps.LatLng(49.4521099, 26.9272621),
                 new google.maps.LatLng(49.4483539, 26.9246417),
-                new google.maps.LatLng(49.434385, 26.9613757),
+                new google.maps.LatLng(49.434385 , 26.9613757),
                 new google.maps.LatLng(49.4259216, 26.9646803),
                 new google.maps.LatLng(49.4240777, 26.9780764),
                 new google.maps.LatLng(49.4268342, 26.9799003),
@@ -41,7 +41,7 @@ function displayRoute(route) {
                 new google.maps.LatLng(49.4160538, 27.0173064),
                 new google.maps.LatLng(49.4119994, 27.0150303),
                 new google.maps.LatLng(49.4119692, 27.0149775),
-                new google.maps.LatLng(49.407277, 27.0268682),
+                new google.maps.LatLng(49.407277 , 27.0268682),
                 new google.maps.LatLng(49.4066766, 27.0334987),
                 new google.maps.LatLng(49.4058389, 27.0383052),
                 new google.maps.LatLng(49.4049104, 27.0446567),
@@ -61,6 +61,9 @@ function displayRoute(route) {
                 new google.maps.LatLng(49.3932537, 27.0479436),
                 new google.maps.LatLng(49.3933077, 27.0480261)
             ];
+
+            //alert(window.JSON.stringify(flightPlanCoordinates));
+            alert(flightPlanCoordinates);
             break;
         default:
     }
