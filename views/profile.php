@@ -18,17 +18,7 @@ session_start();
             <div class="container adaptiveContainer">
             <!-- left, vertical navbar & content -->
                 <div class="row">
-                <!-- left, vertical navbar -->
-                    <div class="col-md-2 bootstrap-admin-col-left adaptiveCol-MD-2">
-                        <ul class="nav navbar-collapse collapse bootstrap-admin-navbar-side">
-                            <li class="active">
-                                <a href=""><i class="glyphicon glyphicon-chevron-right"></i>Профіль</a>
-                            </li>
-                            <li>
-                                <a href="change_password.php"><i class="glyphicon glyphicon-chevron-right"></i>Налаштування</a>
-                            </li>
-                        </ul>
-                    </div>
+                    <?php include_once("../assets/resources/left_navbar.php"); ?>
 
                     <!-- content -->
                     <div class="col-md-10 adaptiveCol-MD-10">
@@ -46,19 +36,19 @@ session_start();
                                                 <div class="form-group">
                                                     <label class="col-lg-2 control-label" for="typeahead">Ім’я:</label>
                                                     <div class="col-lg-10">
-                                                        <input type="text" class="form-control col-md-6" id="typeahead" value="<?php echo $_SESSION['firstName']; ?>" name="firstName" />
+                                                        <input type="text" class="form-control col-md-6 textWidth" id="typeahead" value="<?php echo $_SESSION['firstName']; ?>" name="firstName" />
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="col-lg-2 control-label" for="typeahead">Прізвище:</label>
                                                     <div class="col-lg-10">
-                                                        <input type="text" class="form-control col-md-6" id="typeahead" />
+                                                        <input type="text" class="form-control col-md-6 textWidth" id="typeahead" />
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="col-lg-2 control-label" for="select02">Стать:</label>
                                                     <div class="col-lg-10">
-                                                        <select id="select02" class="selectize-select" style="width: 400px">
+                                                        <select id="select02" class="selectize-select">
                                                             <option value="male">Чоловіча</option>
                                                             <option value="female">Жіноча</option>
                                                         </select>
@@ -67,19 +57,19 @@ session_start();
                                                 <div class="form-group">
                                                     <label class="col-lg-2 control-label" for="typeahead">Мережеве ім’я:</label>
                                                     <div class="col-lg-10">
-                                                        <input type="text" class="form-control col-md-6" id="typeahead" value="<?php echo $_SESSION['nickName']; ?>" name="nickName" />
+                                                        <input type="text" class="form-control col-md-6 textWidth" id="typeahead" value="<?php echo $_SESSION['nickName']; ?>" name="nickName" />
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="col-lg-2 control-label" for="typeahead">Email:</label>
                                                     <div class="col-lg-10">
-                                                        <input type="text" class="form-control col-md-6" id="typeahead" value="<?php echo $_SESSION['email']; ?>" />
+                                                        <input type="text" class="form-control col-md-6 textWidth" id="typeahead" value="<?php echo $_SESSION['email']; ?>" />
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="col-lg-2 control-label" for="select02">Маршрут:</label>
                                                     <div class="col-lg-10">
-                                                        <select id="select02" class="selectize-select" style="width: 400px">
+                                                        <select id="select02" class="selectize-select">
                                                             <?php
                                                             $route = new RouteClass();
 

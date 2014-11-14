@@ -5,7 +5,7 @@ class MessagesClass
 
     }
 
-    public function getSuccessfullBar($message) {
+    public function getSuccessfulBar($message) {
     ?>
         <div class="alert alert-success" role="alert">
             <strong>Чудово!</strong> <?php echo $message; ?>

@@ -12,60 +12,14 @@ session_start();
     </head>
 
     <body>
-
-        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="../index.php">GPS Bus</a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="index.php">Головна</a></li>
-                        <li><a href="#">Про нас</a></li>
-                        <li><a href="#">Контакти</a></li>
-                    </ul>
-
-                    <form class="navbar-right" role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
-                        <?php
-                        if (isset($_SESSION['idDriver'])) {
-                            echo "<a class='navbar-brand' href='profile.php'>" . $_SESSION['nickName'] . "</a>";
-                        }
-                        ?>
-
-                        <?php
-                        if (isset($_POST['exit'])) {
-                            if (isset($_SESSION['idDriver'])) {
-                                session_destroy();
-                                htmlRedirect("index.php");
-                            }
-                        }
-
-                        if (isset($_SESSION['idDriver'])) {
-                            echo "<button type='submit' class='btn btn-danger exit' name='exit'>Вихід</button>";
-                        }
-                        ?>
-                    </form>
-                </div><!--/.navbar-collapse -->
-            </div>
-        </div>
-
+        <?php include_once("../assets/resources/NavigationPanel.php"); ?>
 
         <div class="container adaptiveContainer">
 
             <div class="container adaptiveContainer">
                 <!-- left, vertical navbar & content -->
                 <div class="row">
-                    <!-- left, vertical navbar -->
-                    <div class="col-md-2 bootstrap-admin-col-left adaptiveCol-MD-2">
-                        <ul class="nav navbar-collapse collapse bootstrap-admin-navbar-side">
-                            <li class="active">
-                                <a href="profile.php"><i class="glyphicon glyphicon-chevron-right"></i>Профіль</a>
-                            </li>
-                            <li>
-                                <a href=""><i class="glyphicon glyphicon-chevron-right"></i>Налаштування</a>
-                            </li>
-                        </ul>
-                    </div>
+                    <?php include_once("../assets/resources/left_navbar.php"); ?>
 
                     <!-- content -->
                     <div class="col-md-10 adaptiveCol-MD-10">
