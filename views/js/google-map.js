@@ -25,9 +25,6 @@ function displayRoute(route) {
     var flightPlanCoordinates;
 
     switch (route) {
-        case '0':
-            deleteLine();
-            break;
         case '1':
 
             break;

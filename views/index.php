@@ -22,30 +22,36 @@ session_start();
                     <div class="adaptiveCol-MD-2 ">
                         <div class="col-lg-10 routeSpinner">
                             <label type="Text">Маршрут:</label>
-                            <select id="select02" class="selectize-select" onchange="onChange()" style="width: 300px">
-                                <option value="0">Не вибрано</option>"
-                                <?php
-                                $route = new RouteClass();
+                            <div id="routeList" class="col-sm-4" style="width: 330px;">
+                                <div class="list-group">
+                                    <?php
+                                    $route = new RouteClass();
 
-                                $routeName = $route->getRouteName();
-                                $stops = $route->getStops();
+                                    $routeName = $route->getRouteName();
+                                    $stops = $route->getStops();
 
-                                for ($i = 0; $i < count($routeName); $i++) {
-                                    $line = $routeName[$i] . " " . $stops[$i];
-                                    echo "<option value='$routeName[$i]'>$line</option>";
-                                }
-                                ?>
-                            </select>
-
-                            <div id="jsConsole">
-                            </div>
+                                    for ($i = 0; $i < count($routeName); $i++) {
+                                        echo "<a href='#' class='list-group-item' onclick='onClick($i)'>
+                                                <h4 class='list-group-item-heading'>$routeName[$i]</h4>
+                                                <p class='list-group-item-text'>$stops[$i]</p>
+                                              </a>";
+                                    }
+                                    ?>
+                                </div>
+                            </div><!-- /.col-sm-4 -->
 
                             <script>
-                                var optionValue;
-                                function onChange() {
-                                    optionValue = document.getElementsByTagName("option")[0].getAttribute("value");
-                                    //document.getElementById("jsConsole").innerHTML = optionValue;
-
+                                function onClick(element) {
+                                    var optionValue = document.getElementsByTagName("h4")[element].innerHTML;
+                                    var listItem = document.getElementById("routeList").getElementsByTagName("a");
+                                    /*
+                                    for (var i = 0; i < listItem.count; i++) {
+                                        if (listItem[i].className == "list-group-item active") {
+                                            listItem[i].className = "list-group-item";
+                                        }
+                                    }
+                                    */
+                                    listItem[element].className += " active";
                                     displayRoute(optionValue);
                                 }
                             </script>

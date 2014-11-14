@@ -4,6 +4,7 @@
    ============================================================= */
 body {
     font-family: 'Open Sans', sans-serif;
+
 }
 
 .pad-top {
@@ -99,7 +100,16 @@ div.routeSpinner {
     margin-right: 16%;
 }
 
+#routeList {
+    margin-left: -16%;
+    height: 475px;;
+    overflow-y: scroll;
+}
+
 .exit {
     margin-bottom: 0;
     margin-top: 7%;
+}
+input.textWidth {
+    width: 100%;
 }
