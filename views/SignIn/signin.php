@@ -12,6 +12,12 @@ session_start();
         <title>Авторизація</title>
     </head>
 
+    <div>
+        <a href="../">
+            <img class="exit-button" src="../images/exit.svg" alt="Exit" />
+        </a>
+    </div>
+
     <body style="padding-top: 0;">
         <div class="container">
             <div class="row text-center pad-top ">
@@ -19,8 +25,8 @@ session_start();
                     <h2><a href="<?php echo $_SERVER['PHP_SELF']; ?>" class="headText">Сторінка авторизації</a></h2>
                 </div>
             </div>
-            <div class="row  pad-top">
 
+            <div class="row  pad-top">
                 <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
                     <div class="panel panel-default">
                         <div class="panel-heading">

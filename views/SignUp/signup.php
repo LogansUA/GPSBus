@@ -9,6 +9,12 @@ include_once("../../assets/redirect.php");
         <title>Реєстрація</title>
     </head>
 
+    <div>
+        <a href="../">
+            <img class="exit-button" src="../images/exit.svg" alt="Exit" />
+        </a>
+    </div>
+
     <body style="padding-top: 0;">
         <div class="container">
             <div class="row text-center pad-top">

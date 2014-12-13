@@ -25,7 +25,7 @@ body {
 
 .carousel .item {
     /*background: url("../images/texture.jpg") center;*/
-    background-color: #817d56;
+    background-color: #ac2531;
 }
 
 .white {
@@ -121,4 +121,10 @@ input.textWidth {
 }
 footer {
     width: 100%;
+}
+
+.exit-button {
+    float: right;
+    margin-right: 1%;
+    width: 5%;
 }
