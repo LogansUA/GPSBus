@@ -44,8 +44,8 @@
                     <img class="slide" src="views/images/GPSBus_logo.png" alt="slide">
                     <div class="container">
                         <div class="carousel-caption">
-                            <h1 class="black">GPS Bus</h1>
-                            <p class="black">
+                            <h1 class="white">GPS Bus</h1>
+                            <p class="white">
                                 GPS Bus - це простий додаток, який дозволяє відслідковувати рух маршрутного таксі, вашого міста.
                             </p>
                         </div>

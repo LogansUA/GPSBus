@@ -1,6 +1,6 @@
 <?php
-include_once("../assets/autoload.php");
-include_once("../assets/redirect.php");
+include_once("../../assets/autoload.php");
+include_once("../../assets/redirect.php");
 
 session_start();
 ?>
@@ -8,7 +8,7 @@ session_start();
 <!DOCTYPE html>
 <html>
     <head lang="en">
-        <?php include_once("../assets/resources/Header.php"); ?>
+        <?php include_once("../../assets/resources/Header.php"); ?>
         <title>Авторизація</title>
     </head>
 
@@ -38,43 +38,11 @@ session_start();
                                     <input type="password" class="form-control" placeholder="Пароль" name="password" />
                                 </div>
                                 <?php
-
-                                if (isset($_POST['sign_in'])) {
-                                    $email = $_POST['email'];
-                                    $password = $_POST['password'];
-
-                                    $correctEmail = true;
-                                    $correctPassword = true;
-
-                                    $messages = new MessagesClass();
-                                    $check = new CheckClass();
-                                    $driver = new DriverClass();
-                                    $login = new LoginClass();
-
-                                    $driverEmailArray = $driver->getEmail();
-                                    $driverPasswordArray = $driver->getPassword();
-
-                                    $isRegistered = $check->isRegistered($email, $driverEmailArray,
-                                                                         $password, $driverPasswordArray);
-
-                                    if (!empty($email) && !empty($password)) {
-                                        if ($isRegistered) {
-                                            if ($login->isAdmin($email)) {
-                                                htmlRedirect("admin_panel/index.php");
-                                            } else {
-                                                htmlRedirect("index.php");
-                                            }
-                                        } else {
-                                            $messages->getErrorBar("Невірний пароль, або імейл.");
-                                        }
-                                    } else {
-                                        $messages->getErrorBar("Не всі поля заповнені.");
-                                    }
-                                }
+                                include_once("../../controllers/SignInController.php");
                                 ?>
                                 <button class="btn btn-lg btn-success btn-block" type="submit" name="sign_in" value="#">Авторизуватися</button>
                                 <hr />
-                                <p>Ще не зареєстровані?  <a href="signup.php" >Тоді реєструйтесь!</a></p>
+                                <p>Ще не зареєстровані?  <a href="../SignUp/signup.php" >Тоді реєструйтесь!</a></p>
                                 <p>Не можете згадати дані? <a href="#">Відновіть їх.</a></p>
                             </form>
                         </div>
@@ -85,7 +53,7 @@ session_start();
         </div>
 
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-        <script src="js/ie10-viewport-bug-workaround.js"></script>
+        <script src="../js/ie10-viewport-bug-workaround.js"></script>
 
     </body>
 </html>

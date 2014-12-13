@@ -1,11 +1,11 @@
 <?php
-include_once("../assets/autoload.php");
-include_once("../assets/redirect.php");
+include_once("../../assets/autoload.php");
+include_once("../../assets/redirect.php");
 ?>
 <!DOCTYPE html>
 <html>
     <head lang="en">
-        <?php include_once("../assets/resources/Header.php"); ?>
+        <?php include_once("../../assets/resources/Header.php"); ?>
         <title>Реєстрація</title>
     </head>
 
@@ -88,7 +88,7 @@ include_once("../assets/redirect.php");
                                 <button class="btn btn-lg btn-primary btn-block" type="submit" name="sign_up" value="#">Зареєструватися</button>
 
                                 <hr />
-                                Вже заєстровані? <a href="signin.php">Тоді заходьте!</a>
+                                Вже заєстровані? <a href="../SignIn/signin.php">Тоді заходьте!</a>
                             </form>
                         </div>
                     </div>
@@ -97,9 +97,9 @@ include_once("../assets/redirect.php");
         </div>
 
         <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
-        <script src="js/jquery-1.10.2.js"></script>
+        <script src="../js/jquery-1.10.2.js"></script>
         <!-- BOOTSTRAP SCRIPTS  -->
-        <script src="js/bootstrap.js"></script>
+        <script src="../js/bootstrap.js"></script>
 
     </body>
 </html>

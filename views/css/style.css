@@ -23,8 +23,14 @@ body {
     border-color: #4cae4c;
 }
 
+.carousel .item {
+    /*background: url("../images/texture.jpg") center;*/
+    background-color: #817d56;
+}
+
 .white {
-    background-color: #ffffff;
+    /*background-color: #ffffff;*/
+    color: #ffffff;
 }
 
 .black {
@@ -111,5 +117,8 @@ div.routeSpinner {
     margin-top: 7%;
 }
 input.textWidth {
+    width: 100%;
+}
+footer {
     width: 100%;
 }

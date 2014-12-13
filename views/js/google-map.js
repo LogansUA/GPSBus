@@ -63,7 +63,7 @@ function displayRoute(route) {
             ];
 
             //alert(window.JSON.stringify(flightPlanCoordinates));
-            alert(flightPlanCoordinates);
+            //alert(flightPlanCoordinates);
             break;
         default:
     }
@@ -71,7 +71,7 @@ function displayRoute(route) {
     flightPath = new google.maps.Polyline({
         path: flightPlanCoordinates,
         geodesic: true,
-        strokeColoe: '#FF0000',
+        strokeColor: '#FF0000',
         strokeOpacity: 1.0,
         strokeWeight: 2
     });

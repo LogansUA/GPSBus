@@ -5,9 +5,9 @@ function phpRedirect($url) {
 }
 
 function htmlRedirect($url) {
-    echo '<meta http-equiv="refresh" content="0;URL='.$url.'" />';
+    echo '<meta http-equiv="refresh" content="0;URL=' . $url . '" />';
 }
 
 function javaScriptRedirect($url) {
-    echo '<script language="JavaScript">window.location.href = "'.$url.'"</script>';
+    echo '<script language="JavaScript">window.location.href = "' . $url . '"</script>';
 }
