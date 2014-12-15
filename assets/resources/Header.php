@@ -23,7 +23,8 @@
 
 <script type="text/javascript" src="/views/js/html5shiv.js"></script>
 <script type="text/javascript" src="/views/js/respond.min.js"></script>
+<script type="text/javascript" src="/views/js/custom.js"></script>
 
 <style type="text/css" id="holderjs-style"></style>
-<script src="https://maps.googleapis.com/maps/api/js"></script>
+<!--<script src="https://maps.googleapis.com/maps/api/js"></script>-->
 <script src="/views/js/google-map.js" ></script>

@@ -43,42 +43,16 @@ session_start();
                                 <span class="input-group-addon"><i class="fa fa-lock lock"></i></span>
                                 <input type="password" class="form-control" placeholder="Пароль" name="password" />
                             </div>
-                            <?php
-                            include_once("../../controllers/SignInController.php");
-                            ?>
+                            <div id="message">
+                                <?php
+                                include_once("../../controllers/SignInController.php");
+                                ?>
+                            </div>
                             <button class="btn btn-lg btn-success btn-block" type="submit" name="sign_in" value="#">Авторизуватися</button>
                             <hr />
                             <p>Ще не зареєстровані?  <a href="../SignUp/signup.php" >Тоді реєструйтесь!</a></p>
                             <p>Не можете згадати дані? <a href="#">Відновіть їх.</a></p>
                         </form>
-
-                        <script>
-                            function checkForm() {
-                                var email = document.signin.email.value;
-                                var password = document.signin.password.value;
-
-                                var isFully = false;
-                                var isEmail = false;
-
-                                if ((email.length > 5) && (password.length > 3)) {
-                                    isFully = true;
-                                }
-
-                                for (var i = 0; i < email.length; i++) {
-                                    if (email[i] == '@') {
-                                        isEmail = true;
-                                    }
-                                }
-
-                                if (isEmail && isFully) {
-                                    return true;
-                                } else {
-                                    alert("Error!");
-                                }
-
-                                return false;
-                            }
-                        </script>
                     </div>
 
                 </div>

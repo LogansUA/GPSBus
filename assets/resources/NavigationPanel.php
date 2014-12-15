@@ -40,7 +40,7 @@
                         if (isset($_SESSION['idDriver'])) {
                             session_destroy();
                             /* TODO: Create normal redirect from profile to home */
-                            $link = $_SERVER['DOCUMENT_ROOT'] . "/views/index.php";
+                            $link = "../";
                             phpRedirect($link);
                         }
                     }

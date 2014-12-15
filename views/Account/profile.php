@@ -49,6 +49,7 @@ session_start();
                                                 <label class="col-lg-2 control-label" for="select02">Стать:</label>
                                                 <div class="col-lg-10">
                                                     <select id="select02" class="selectize-select">
+                                                        <option value="none">Невизначено</option>
                                                         <option value="male">Чоловіча</option>
                                                         <option value="female">Жіноча</option>
                                                     </select>

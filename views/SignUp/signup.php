@@ -52,49 +52,13 @@ include_once("../../assets/redirect.php");
                                 <span class="input-group-addon"><i class="fa fa-lock lock"  ></i></span>
                                 <input type="password" class="form-control" placeholder="Повторіть пароль" name="rePassword" />
                             </div>
-
                             <?php
-                            if (isset($_POST['sign_up'])) {
-                                $firstName = $_POST['firstName'];
-                                $nickName = $_POST['nickName'];
-                                $email = $_POST['email'];
-                                $password = $_POST['password'];
-                                $rePassword = $_POST['rePassword'];
-
-                                $database = new DataBaseClass();
-                                $messages = new MessagesClass();
-                                $check = new CheckClass();
-                                $driver = new DriverClass();
-
-                                if (!empty($firstName) &
-                                    !empty($nickName)  &
-                                    !empty($email)     &
-                                    !empty($password)  &
-                                    !empty($rePassword)) {
-
-                                    if ($check->isNewUser($email, $driver->getEmail())) {
-
-                                        if ($password == $rePassword) {
-                                            $database->insertData("INSERT INTO `Driver`(`firstName`, `nickName`, `email`, `password`, `group`)
-                                                               VALUES ('$firstName', '$nickName', '$email', '$password', 'users')");
-                                            htmlRedirect("signin.php");
-                                        } else {
-                                            $messages->getErrorBar("Паролі повинні співпадати.");
-                                        }
-                                    } else {
-                                        $messages->getErrorBar("Email $email вже зареєстрований.");
-                                    }
-
-                                } else {
-                                    $messages->getErrorBar("Ви ввели не всі дані.");
-                                }
-                            }
+                            include_once("../../controllers/SignUpController.php");
                             ?>
-
                             <button class="btn btn-lg btn-primary btn-block" type="submit" name="sign_up" value="#">Зареєструватися</button>
 
                             <hr />
-                            Вже заєстровані? <a href="../SignIn/signin.php">Тоді заходьте!</a>
+                            Вже зареєстровані? <a href="../SignIn/signin.php">Тоді заходьте!</a>
                         </form>
                     </div>
                 </div>
