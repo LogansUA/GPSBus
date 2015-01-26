@@ -1,5 +1,5 @@
 <?php
-/* TODO: Change personal data depends on document name (change_password or change_email) */
+/* TODO: Get personal data depends on document name (change_password or change_email) */
 
 if (true) {
     if (isset($_POST['save'])) {
