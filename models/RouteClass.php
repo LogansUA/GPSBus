@@ -41,9 +41,9 @@ class RouteClass
         switch($page) {
             case 'home':
                 for ($i = 0; $i < count($routeName); $i++) {
-                    echo "<a role='button' class='list-group-item' onclick='onClick($i)'>
-                             <h4 class='list-group-item-heading'>$routeName[$i]</h4>
-                             <p class='list-group-item-text'>$stops[$i]</p>
+                    echo "<a role='button' data-route='' onclick='onClick($i)'>
+                             <h4>$routeName[$i]</h4>
+                             <p>$stops[$i]</p>
                           </a>";
                 }
                 break;
