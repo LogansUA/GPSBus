@@ -39,5 +39,7 @@ session_start();
     </div>
 
     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="../web/js/map_main.js"></script>
 </body>
 </html>
