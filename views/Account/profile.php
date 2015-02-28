@@ -13,100 +13,67 @@ session_start();
 
 <body>
     <?php include_once("../../assets/resources/NavigationPanel.php"); ?>
+    <?php include_once("../../assets/resources/left_navbar.php"); ?>
 
-    <div class="container adaptiveContainer">
-        <div class="container adaptiveContainer">
-        <!-- left, vertical navbar & content -->
-            <div class="row">
-                <?php include_once("../../assets/resources/left_navbar.php"); ?>
-
-                <!-- content -->
-                <div class="col-md-10 adaptiveCol-MD-10">
-
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="panel panel-default bootstrap-admin-no-table-panel">
-                                <div class="panel-heading">
-                                    <div class="text-muted bootstrap-admin-box-title">Профіль</div>
-                                </div>
-                                <div class="bootstrap-admin-no-table-panel-content bootstrap-admin-panel-content collapse in">
-                                    <form class="form-horizontal" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
-                                        <fieldset>
-                                            <legend>Інформація</legend>
-                                            <div class="form-group">
-                                                <label class="col-lg-2 control-label" for="typeahead">Ім’я:</label>
-                                                <div class="col-lg-10">
-                                                    <input type="text" class="form-control col-md-6 textWidth" id="typeahead" value="<?php echo $_SESSION['firstName']; ?>" name="firstName" />
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-lg-2 control-label" for="typeahead">Прізвище:</label>
-                                                <div class="col-lg-10">
-                                                    <input type="text" class="form-control col-md-6 textWidth" id="typeahead" />
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-lg-2 control-label" for="select02">Стать:</label>
-                                                <div class="col-lg-10">
-                                                    <select id="select02" class="selectize-select">
-                                                        <option value="none">Невизначено</option>
-                                                        <option value="male">Чоловіча</option>
-                                                        <option value="female">Жіноча</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-lg-2 control-label" for="typeahead">Мережеве ім’я:</label>
-                                                <div class="col-lg-10">
-                                                    <input type="text" class="form-control col-md-6 textWidth" id="typeahead" value="<?php echo $_SESSION['nickName']; ?>" name="nickName" />
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-lg-2 control-label" for="typeahead">Email:</label>
-                                                <div class="col-lg-10">
-                                                    <input type="text" class="form-control col-md-6 textWidth" id="typeahead" value="<?php echo $_SESSION['email']; ?>" />
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-lg-2 control-label" for="select02">Маршрут:</label>
-                                                <div class="col-lg-10">
-                                                    <select id="select02" class="selectize-select">
-                                                        <?php include_once("../../controllers/ProfileController.php"); ?>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-lg-2 control-label" for="typeahead"></label>
-                                                <div class="col-lg-10">
-                                                    <button type="submit" class="btn btn-primary" name="save">Зберегти</button>
-                                                </div>
-                                            </div>
-                                        </fieldset>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    Профіль
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+        <fieldset>
+            <legend>Інформація</legend>
+            <div>
+                <label for="typeahead">Ім’я:</label>
+                <div>
+                    <input type="text" id="typeahead" value="<?php echo $_SESSION['firstName']; ?>" name="firstName" />
                 </div>
             </div>
-        </div>
+            <div>
+                <label for="typeahead">Прізвище:</label>
+                <div>
+                    <input type="text" id="typeahead" />
+                </div>
+            </div>
+            <div>
+                <label for="select02">Стать:</label>
+                <div>
+                    <select id="select02">
+                        <option value="none">Невизначено</option>
+                        <option value="male">Чоловіча</option>
+                        <option value="female">Жіноча</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <label for="typeahead">Мережеве ім’я:</label>
+                <div>
+                    <input type="text" id="typeahead" value="<?php echo $_SESSION['nickName']; ?>" name="nickName" />
+                </div>
+            </div>
+            <div>
+                <label for="typeahead">Email:</label>
+                <div>
+                    <input type="text" id="typeahead" value="<?php echo $_SESSION['email']; ?>" />
+                </div>
+            </div>
+            <div>
+                <label for="select02">Маршрут:</label>
+                <div>
+                    <select id="select02">
+                        <?php include_once("../../controllers/ProfileController.php"); ?>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <label for="typeahead"></label>
+                <div>
+                    <button type="submit" name="save">Зберегти</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
 
-        <hr>
+    <hr>
 
-        <footer>
-            <p>© Company 2014</p>
-        </footer>
-    </div> <!-- /container -->
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../../web/js/jquery.min.js"></script>
-    <script src="../../web/js/bootstrap.min.js"></script>
-
-    <script type="text/javascript" src="../../web/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../web/js/spinners.js"></script>
-
+    <footer>
+        <p>© Company 2014</p>
+    </footer>
 </body>
 </html>

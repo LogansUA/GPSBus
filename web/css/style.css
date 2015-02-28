@@ -33,13 +33,10 @@ body {
     color: #000000;
 }
 
-#map_canvas {
-    width: 100%;
+#map {
+    width: 500px;
     height: 500px;
     background-color: #CCC;
-}
-
-.map {
     float: right;
 }
 
@@ -103,7 +100,6 @@ div.routeSpinner {
 }
 
 #routeList {
-    margin-left: -16%;
     height: 475px;;
     overflow-y: scroll;
 }
