@@ -2,17 +2,17 @@
 <html>
     <head lang="en">
         <meta charset="UTF-8">
-        <link rel="icon" href="/views/images/icon.png">
+        <link rel="icon" href="/web/images/icon.png">
 
         <!-- Bootstrap theme -->
-        <link href="/views/css/bootstrap.css" rel="stylesheet">
-        <link href="/views/css/bootstrap.min.css" rel="stylesheet">
-        <link href="/views/css/bootstrap-theme.css" rel="stylesheet">
+        <link href="/web/css/bootstrap.css" rel="stylesheet">
+        <link href="/web/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/web/css/bootstrap-theme.css" rel="stylesheet">
 
         <!-- Custom theme -->
-        <link href="/views/css/jumbotron.css" rel="stylesheet">
-        <link href="/views/css/carousel.css" rel="stylesheet">
-        <link href="/views/css/style.css" rel="stylesheet">
+        <link href="/web/css/jumbotron.css" rel="stylesheet">
+        <link href="/web/css/carousel.css" rel="stylesheet">
+        <link href="/web/css/style.css" rel="stylesheet">
 
         <style type="text/css" id="holderjs-style"></style>
 
@@ -41,7 +41,7 @@
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="item active">
-                    <img class="slide" src="views/images/GPSBus_logo.png" alt="slide">
+                    <img class="slide" src="web/images/GPSBus_logo.png" alt="slide">
                     <div class="container">
                         <div class="carousel-caption">
                             <h1 class="white">GPS Bus</h1>
@@ -73,7 +73,7 @@
                     </p>
                 </div>
                 <div class="col-md-5">
-                    <img src="views/images/question_mark_logo_01.png" class="featurette-image img-responsive" alt="500x500">
+                    <img src="web/images/question_mark_logo_01.png" class="featurette-image img-responsive" alt="500x500">
                 </div>
             </div>
             <!--
@@ -113,19 +113,19 @@
 
             <div class="row">
                 <div class="col-lg-4">
-                    <img src="views/images/github_logo.png" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+                    <img src="web/images/github_logo.png" alt="Generic placeholder image" style="width: 140px; height: 140px;">
                     <h2>GitHub</h2>
                     <p>GPS Bus є повністю відкритим програмним забезпеченням з відкритим сирцевим кодом.</p>
                     <p><a class="btn btn-default" href="https://github.com/LogansUA/GPSBus" role="button">View details »</a></p>
                 </div>
                 <div class="col-lg-4">
-                    <img src="views/images/google_play_logo.png" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+                    <img src="web/images/google_play_logo.png" alt="Generic placeholder image" style="width: 140px; height: 140px;">
                     <h2>Google Play</h2>
                     <p>Завантажуйте GPS Bus безкоштовно в найбільшому магазині додатків, Google Play.</p>
                     <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
                 </div>
                 <div class="col-lg-4">
-                    <img src="views/images/fb_logo.png" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+                    <img src="web/images/fb_logo.png" alt="Generic placeholder image" style="width: 140px; height: 140px;">
                     <h2>Facebook</h2>
                     <p>Переглядайте новини на нашій сторінці в соціальній мережі Facebook.</p>
                     <p><a class="btn btn-default" href="" role="button">View details »</a></p>
@@ -146,9 +146,9 @@
         <!-- Bootstrap core JavaScript
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
-        <script src="views/js/jquery.js"></script>
-        <script src="views/js/bootstrap.js"></script>
-        <script src="views/js/docs.js"></script>
+        <script src="web/js/jquery.js"></script>
+        <script src="web/js/bootstrap.js"></script>
+        <script src="web/js/docs.js"></script>
 
     </body>
 </html>
