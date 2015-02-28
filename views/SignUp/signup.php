@@ -12,7 +12,7 @@ include_once("../../assets/redirect.php");
 <body style="padding-top: 0;">
     <div>
         <a href="../">
-            <img class="exit-button" src="../images/exit.svg" alt="Exit" />
+            <img class="exit-button" src="../../web/images/exit.svg" alt="Exit" />
         </a>
     </div>
 
@@ -65,11 +65,5 @@ include_once("../../assets/redirect.php");
             </div>
         </div>
     </div>
-
-    <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
-    <script src="../js/jquery-1.10.2.js"></script>
-    <!-- BOOTSTRAP SCRIPTS  -->
-    <script src="../js/bootstrap.js"></script>
-
 </body>
 </html>
