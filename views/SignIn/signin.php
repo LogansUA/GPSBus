@@ -15,7 +15,7 @@ session_start();
 <body style="padding-top: 0;">
     <div>
         <a href="../">
-            <img class="exit-button" src="../images/exit.svg" alt="Exit" />
+            <img class="exit-button" src="../../web/images/exit.svg" alt="Exit" />
         </a>
     </div>
 
@@ -59,9 +59,5 @@ session_start();
             </div>
         </div>
     </div>
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../js/ie10-viewport-bug-workaround.js"></script>
-
 </body>
 </html>

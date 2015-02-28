@@ -80,17 +80,11 @@ session_start();
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../js/jquery.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+    <script src="../../web/js/jquery.min.js"></script>
+    <script src="../../web/js/bootstrap.min.js"></script>
 
-    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../vendors/uniform/jquery.uniform.min.js"></script>
-    <script type="text/javascript" src="../vendors/chosen.jquery.min.js"></script>
-    <script type="text/javascript" src="../vendors/selectize/dist/js/standalone/selectize.min.js"></script>
-    <script type="text/javascript" src="../vendors/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-    <script type="text/javascript" src="../js/spinners.js"></script>
+    <script type="text/javascript" src="../../web/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../web/js/spinners.js"></script>
 
 </body>
 </html>
