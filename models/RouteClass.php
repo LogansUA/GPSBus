@@ -3,8 +3,7 @@ include_once("../assets/autoload.php");
 
 class RouteClass
 {
-    private
-        $database;
+    private $database;
 
     public function __construct() {
         $this->database = new DataBaseClass();

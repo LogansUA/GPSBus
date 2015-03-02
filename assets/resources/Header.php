@@ -11,7 +11,3 @@
 
 <!-- Leaflet map -->
 <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
-
-<style type="text/css" id="holderjs-style"></style>
-<!--<script src="https://maps.googleapis.com/maps/api/js"></script>-->
-<!--<script src="/web/js/google-map.js" ></script>-->
