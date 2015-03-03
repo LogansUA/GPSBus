@@ -15,7 +15,6 @@ session_start();
     <?php include_once("../../assets/resources/NavigationPanel.php"); ?>
     <?php include_once("../../assets/resources/left_navbar.php"); ?>
 
-    Профіль
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
         <fieldset>
             <legend>Інформація</legend>
@@ -28,7 +27,7 @@ session_start();
             <div>
                 <label for="typeahead">Прізвище:</label>
                 <div>
-                    <input type="text" id="typeahead" />
+                    <input type="text" id="typeahead" value="<?php echo $_SESSION['lastName']; ?>" name="lastName" />
                 </div>
             </div>
             <div>
@@ -42,22 +41,10 @@ session_start();
                 </div>
             </div>
             <div>
-                <label for="typeahead">Мережеве ім’я:</label>
-                <div>
-                    <input type="text" id="typeahead" value="<?php echo $_SESSION['nickName']; ?>" name="nickName" />
-                </div>
-            </div>
-            <div>
-                <label for="typeahead">Email:</label>
-                <div>
-                    <input type="text" id="typeahead" value="<?php echo $_SESSION['email']; ?>" />
-                </div>
-            </div>
-            <div>
                 <label for="select02">Маршрут:</label>
                 <div>
                     <select id="select02">
-                        <?php include_once("../../controllers/ProfileController.php"); ?>
+                        <?php include_once("../../ProfileController.php"); ?>
                     </select>
                 </div>
             </div>

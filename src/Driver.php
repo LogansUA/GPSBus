@@ -1,9 +1,5 @@
 <?php
 
-use Doctrine\Entity;
-use Doctrine\ORM\Mapping\Id;
-use Doctrine\ORM\Mapping\Column;
-
 /**
  * Driver
  *
@@ -16,7 +12,7 @@ class Driver
     /**
      * @var int $id Id
      *
-     * @Id @Column(type="integer") @GeneratedValue
+     * @Id @Column(name="id", type="integer") @GeneratedValue
      */
     private $id;
 
@@ -51,16 +47,16 @@ class Driver
     /**
      * @var int $idRoute Id Route
      *
-     * @Column(type="integer")
+     * @Column(type="integer", nullable=true)
      */
     private $idRoute;
 
     /**
-     * @var string $group Group
+     * @var string $role Role
      *
      * @Column(type="string")
      */
-    private $group;
+    private $role;
 
     /**
      * Get firstName
@@ -193,26 +189,27 @@ class Driver
     }
 
     /**
-     * Get group
+     * Get role
      *
-     * @return string Group
+     * @return string Role
      */
-    public function getGroup()
+    public function getRole()
     {
-        return $this->group;
+        return $this->role;
     }
 
     /**
-     * Set group
+     * Set role
      *
-     * @param string $group group
+     * @param string $role role
      *
      * @return $this
      */
-    public function setGroup($group)
+    public function setRole($role)
     {
-        $this->group = $group;
+        $this->role = $role;
 
         return $this;
     }
+
 }

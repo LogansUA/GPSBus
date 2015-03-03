@@ -1,5 +1,6 @@
 <?php
 include_once("../assets/autoload.php");
+require_once '../bootstrap.php';
 
 class RouteClass
 {

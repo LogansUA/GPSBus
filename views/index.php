@@ -17,13 +17,13 @@ session_start();
     Маршрут:
     <div>
         <div id="routeList" style="width: 330px; float: left">
-            <?php include_once("../controllers/HomeController.php"); ?>
+            <?php include_once("../HomeController.php"); ?>
         </div>
 
         <div id="map" style="float: right;"></div>
 
         <script>
-        //      function onClick(element) {
+//      function onClick(element) {
 //          var optionValue = document.getElementsByTagName("h4")[element].innerHTML;
 //          var listItem = document.getElementById("routeList").getElementsByTagName("a");
 //          var it = document.getElementById("routeList").getElementsByClassName("list-group-item active");

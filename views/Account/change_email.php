@@ -15,30 +15,24 @@ session_start();
     <?php include_once("../../assets/resources/NavigationPanel.php"); ?>
     <?php include_once("../../assets/resources/left_navbar.php"); ?>
 
-    Профіль
-
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
         <fieldset>
             <legend>Зміна імейлу:</legend>
+            <input name="page" type="hidden" value="email" />
             <div>
-                <label for="typeahead">Старий імейл:</label>
                 <div>
-                    <input type="text"id="typeahead" name="oldEmail" />
+                    <label for="typeahead">Старий імейл:</label>
                 </div>
-            </div>
-            <div >
-                <label for="typeahead">Новий імейл:</label>
-                <div>
-                    <input type="text" id="typeahead" name="newEmail" />
-                </div>
+                <input type="text" id="typeahead" name="old-email" />
             </div>
             <div>
-                <label for="typeahead"></label>
                 <div>
-                    <button type="submit" name="save">Зберегти</button>
+                    <label for="typeahead">Новий імейл:</label>
                 </div>
+                <input type="text" id="typeahead" name="new-email" />
             </div>
-            <?php include_once("../../controllers/ChangeController.php"); ?>
+            <button type="submit" name="save">Зберегти</button>
+            <?php include_once("../../ChangeController.php"); ?>
         </fieldset>
     </form>
 

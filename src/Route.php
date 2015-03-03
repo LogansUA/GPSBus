@@ -13,7 +13,6 @@ use Doctrine\ORM\Mapping\Column;
  */
 class Route
 {
-
     /**
      * @var int $id Id
      *
