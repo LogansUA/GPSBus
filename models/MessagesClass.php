@@ -7,7 +7,7 @@ class MessagesClass
 
     public function getSuccessfulBar($message) {
     ?>
-        <div class="alert alert-success" role="alert">
+        <div>
             <strong>Чудово!</strong> <?php echo $message; ?>
         </div>
     <?php
@@ -15,7 +15,7 @@ class MessagesClass
 
     public function getInformationBar($message) {
     ?>
-        <div class="alert alert-info" role="alert">
+        <div>
             <strong>Інформація!</strong> <?php echo $message; ?>
         </div>
     <?php
@@ -23,7 +23,7 @@ class MessagesClass
 
     public function getWarningBar($message) {
     ?>
-        <div class="alert alert-warning" role="alert">
+        <div>
             <strong>Попередження!</strong> <?php echo $message; ?>
         </div>
     <?php
@@ -31,9 +31,9 @@ class MessagesClass
 
     public function getErrorBar($message) {
     ?>
-        <div class="alert alert-danger" role="alert">
+        <div>
             <strong>Помилка!</strong> <?php echo $message; ?>
         </div>
     <?php
     }
-} 
+}

@@ -18,15 +18,45 @@ include_once("../../assets/redirect.php");
     <strong>Реєстрація</strong>
 
     <form role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-        <br/>
-            <input type="text" class="form-control" placeholder="Ім’я" name="firstName" />
-            <input type="text" class="form-control" placeholder="Нікнейм" name="nickName" />
-            <input type="text" class="form-control" placeholder="Email" name="email" />
-            <input type="password" class="form-control" placeholder="Пароль" name="password" />
-            <input type="password" class="form-control" placeholder="Повторіть пароль" name="rePassword" />
-        <?php include_once("../../controllers/SignUpController.php"); ?>
-        <button type="submit" name="sign_up" value="#">Зареєструватися</button>
+        <fieldset>
+            <legend>Інформація</legend>
+            <div>
+                <div>
+                    <label for="first-name">Ім’я</label>
+                </div>
+                <input id="first-name" type="text" name="first-name" />
+            </div>
 
+            <div>
+                <div>
+                    <label for="last-name">Прізвище</label>
+                </div>
+                <input id="last-name" type="text" name="last-name" />
+            </div>
+
+            <div>
+                <div>
+                    <label for="email">Імейл</label>
+                </div>
+                <input id="email" type="text" name="email" />
+            </div>
+
+            <div>
+                <div>
+                    <label for="password">Пароль</label>
+                </div>
+                <input id="password" type="password" name="password" />
+            </div>
+
+            <div>
+                <div>
+                    <label for="re-password">Повторіть пароль</label>
+                </div>
+                <input id="re-password" type="password"  name="re-password" />
+            </div>
+            <?php include_once("../../SignUpController.php"); ?>
+            <button type="submit" name="sign_up" value="#">Зареєструватися</button>
+        </fieldset>
         <hr />
         Вже зареєстровані? <a href="../SignIn/signin.php">Тоді заходьте!</a>
     </form>

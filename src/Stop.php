@@ -13,7 +13,6 @@ use Doctrine\ORM\Mapping\Column;
  */
 class Stop
 {
-
     /**
      * @var int $id Id
      *

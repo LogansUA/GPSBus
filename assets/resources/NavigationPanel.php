@@ -19,7 +19,7 @@
 
                 <?php
                 if (!isset($_SESSION['idDriver'])) {
-                    ?>
+                ?>
                     <form class="navbar-form navbar-right" role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
                         <button type="submit" class="btn btn-primary" name="signup" value="#">Зареєструватися</button>
                         <button type="submit" class="btn btn-success getawayfromme" name="signin" value="#">Вхід</button>
@@ -31,7 +31,9 @@
                 <form class="navbar-right" role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
                     <?php
                     if (isset($_SESSION['idDriver'])) {
-                        echo "<a class='navbar-brand' href='/views/Account/profile.php'>" . $_SESSION['nickName'] . "</a>";
+                        echo "<a class='navbar-brand' href='/views/Account/profile.php'>" .
+                                 $_SESSION['firstName'] . " " . $_SESSION['lastName'] .
+                             "</a>";
                     }
                     ?>
 
@@ -40,9 +42,7 @@
                         if (isset($_SESSION['idDriver'])) {
                             session_destroy();
                             /* TODO: Create normal redirect from profile to home */
-                            chdir('../../views');
-                            $link = "index.php";
-                            phpRedirect($link);
+                            phpRedirect('../index.php');
                         }
                     }
 

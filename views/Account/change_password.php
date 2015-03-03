@@ -15,35 +15,36 @@ session_start();
     <?php include_once("../../assets/resources/NavigationPanel.php"); ?>
     <?php include_once("../../assets/resources/left_navbar.php"); ?>
 
-    Профіль
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
         <fieldset>
             <legend>Зміна паролю:</legend>
+            <input name="page" type="hidden" value="password" />
             <div>
-                <label for="typeahead">Старий пароль:</label>
                 <div>
-                    <input type="text" id="typeahead" name="oldPassword" />
+                    <label for="typeahead">Старий пароль:</label>
                 </div>
+                <input type="text" id="typeahead" name="old-password" />
             </div>
+
             <div>
-                <label for="typeahead">Новий пароль:</label>
                 <div>
-                    <input type="text" id="typeahead" name="newPassword" />
+                    <label for="typeahead">Новий пароль:</label>
                 </div>
+                <input type="text" id="typeahead" name="new-password" />
             </div>
+
             <div>
-                <label for="typeahead">Повторіть пароль:</label>
                 <div>
-                    <input type="text" id="typeahead" name="repeatNewPassword" />
+                    <label for="typeahead">Повторіть пароль:</label>
                 </div>
+                <input type="text" id="typeahead" name="repeat-new-password" />
             </div>
+
             <div>
                 <label for="typeahead"></label>
-                <div>
-                    <button type="submit" name="save">Зберегти</button>
-                </div>
+                <button type="submit" name="save">Зберегти</button>
             </div>
-            <?php include_once("../../controllers/ChangeController.php"); ?>
+            <?php include_once("../../ChangeController.php"); ?>
         </fieldset>
     </form>
 
