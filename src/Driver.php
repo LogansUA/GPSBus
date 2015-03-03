@@ -45,6 +45,13 @@ class Driver
     private $password;
 
     /**
+     * @var string $gender Gender
+     *
+     * @Column(type="string", nullable=true)
+     */
+    private $gender;
+
+    /**
      * @var int $idRoute Id Route
      *
      * @Column(type="integer", nullable=true)
@@ -165,6 +172,30 @@ class Driver
     }
 
     /**
+     * Get gender
+     *
+     * @return string Gender
+     */
+    public function getGender()
+    {
+        return $this->gender;
+    }
+
+    /**
+     * Set gender
+     *
+     * @param string $gender gender
+     *
+     * @return $this
+     */
+    public function setGender($gender)
+    {
+        $this->gender = $gender;
+
+        return $this;
+    }
+
+    /**
      * Get idRoute
      *
      * @return int IdRoute
@@ -211,5 +242,4 @@ class Driver
 
         return $this;
     }
-
 }

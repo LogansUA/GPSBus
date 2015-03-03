@@ -33,9 +33,8 @@ session_start();
             <div>
                 <label for="select02">Стать:</label>
                 <div>
-                    <select id="select02">
-                        <option value="none">Невизначено</option>
-                        <option value="male">Чоловіча</option>
+                    <select id="select02" name="gender">
+                        <option value="male" selected="selected">Чоловіча</option>
                         <option value="female">Жіноча</option>
                     </select>
                 </div>

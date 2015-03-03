@@ -2,9 +2,10 @@
 
 include_once('bootstrap.php');
 
-$errorCode = 0;
 
 if (isset($_POST['sign-in'])) {
+    $errorCode = 0;
+
     $email = $_POST['email'];
     $password = $_POST['password'];
 
