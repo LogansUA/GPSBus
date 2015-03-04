@@ -3,7 +3,7 @@
 include_once('src/Driver.php');
 include_once('bootstrap.php');
 
-if (isset($_POST['sign_up'])) {
+if (isset($_POST['sign-up'])) {
     $firstName = $_POST['first-name'];
     $lastName = $_POST['last-name'];
     $email = $_POST['email'];

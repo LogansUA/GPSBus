@@ -12,24 +12,46 @@ session_start();
     <title>Авторизація</title>
 </head>
 
-<body style="padding-top: 0;">
-    <a href="../">
-        <img class="exit-button" src="../../web/images/exit.svg" alt="Exit" />
-    </a>
+<body>
+    <div>
+        <a href="../">
+            <img class="exit-button" src="../../web/images/exit.svg" alt="Exit" />
+        </a>
+    </div>
 
-    <strong>Авторизація</strong>
-    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" onsubmit="return checkForm()" >
-        <input type="text" autofocus="" placeholder="Email" name="email" />
-        <input type="password" placeholder="Пароль" name="password" />
+    <div class="well bs-component" style="margin: 6% 35% 0 35%;">
+        <form class="form-horizontal" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" onsubmit="return checkForm()">
+            <fieldset>
+                <legend><strong>Авторизація</strong></legend>
+                <div class="form-group">
+                    <label for="inputEmail" class="col-lg-2 control-label">Імейл</label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" id="inputEmail" placeholder="Імейл" name="email" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword" class="col-lg-2 control-label">Пароль</label>
+                    <div class="col-lg-10">
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Пароль" name="password" />
+                    </div>
+                </div>
 
-        <div>
-            <?php include_once("../../SignInController.php"); ?>
-        </div>
+                <div>
+                    <?php include_once("../../SignInController.php"); ?>
+                </div>
 
-        <button type="submit" name="sign-in" value="#">Авторизуватися</button>
-        <hr />
-        <p>Ще не зареєстровані?  <a href="../SignUp/signup.php" >Тоді реєструйтесь!</a></p>
-        <p>Не можете згадати дані? <a href="#">Відновіть їх.</a></p>
-    </form>
+                <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                        <button type="reset" class="btn btn-default">Cancel</button>
+                        <button type="submit" class="btn btn-primary" name="sign-in">Submit</button>
+                    </div>
+                </div>
+
+                <hr />
+                <p>Ще не зареєстровані?  <a href="../SignUp/signup.php" >Тоді реєструйтесь!</a></p>
+                <p>Не можете згадати дані? <a href="#">Відновіть їх.</a></p>
+            </fieldset>
+        </form>
+    </div>
 </body>
 </html>

@@ -34,8 +34,8 @@ body {
 }
 
 #map {
-    width: 70%;
-    height: 500px;
+    width: 65%;
+    height: 450px;
     background-color: #CCC;
     float: right;
 }
@@ -99,15 +99,11 @@ div.routeSpinner {
     margin-right: 16%;
 }
 
-#routeList {
+#route-list {
     height: 475px;;
     overflow-y: scroll;
 }
 
-.exit {
-    margin-bottom: 0;
-    margin-top: 7%;
-}
 input.textWidth {
     width: 100%;
 }
