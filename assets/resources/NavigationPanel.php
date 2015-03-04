@@ -14,7 +14,7 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="/views/index.php">Головна</a></li>
                     <li><a href="#">Про нас</a></li>
-                    <li><a href="#">Контакти</a></li>
+                    <li><a href="#">Зворотній зв’язок</a></li>
                 </ul>
 
                 <?php
@@ -35,9 +35,7 @@
                                  $_SESSION['firstName'] . " " . $_SESSION['lastName'] .
                              "</a>";
                     }
-                    ?>
 
-                    <?php
                     if (isset($_POST['exit'])) {
                         if (isset($_SESSION['idDriver'])) {
                             session_destroy();
@@ -47,7 +45,7 @@
                     }
 
                     if (isset($_SESSION['idDriver'])) {
-                        echo "<button type='submit' class='btn btn-danger exit' name='exit'>Вихід</button>";
+                        echo "<button type='submit' class='btn btn-danger' style='margin-top: 2%' name='exit'>Вихід</button>";
                     }
                     ?>
                 </form>

@@ -2,7 +2,6 @@
 
 include_once('bootstrap.php');
 
-
 if (isset($_POST['sign-in'])) {
     $errorCode = 0;
 
@@ -10,7 +9,7 @@ if (isset($_POST['sign-in'])) {
     $password = $_POST['password'];
 
     if (empty($email) || empty($password)) {
-        $errorCode = 1;
+        $errorCode = 2;
     }
 
     $driver = $entityManager->getRepository('Driver')->findOneBy([
@@ -18,27 +17,27 @@ if (isset($_POST['sign-in'])) {
     ]);
 
     if (null === $driver) {
-        $errorCode = 1;
-    }
-
-    if ($driver->getPassword() == $password) {
-        fillSession($driver);
-
-        if ($driver->getRole() == 'admin') {
-            htmlRedirect('../Admin/index.php');
-        } else {
-            htmlRedirect('../index.php');
-        }
+        $errorCode = 2;
     } else {
-        $errorCode = 1;
+        if ($driver->getPassword() == $password) {
+            fillSession($driver);
+
+            if ($driver->getRole() == 'admin') {
+                htmlRedirect('../Admin/index.php');
+            } else {
+                htmlRedirect('../index.php');
+            }
+        } else {
+            $errorCode = 2;
+        }
     }
 }
 
 switch($errorCode) {
-    case 0:
+    case 1:
         echo 'Помилка';
         break;
-    case 1:
+    case 2:
         echo 'Невірний пароль, або імейл.';
         break;
     default:

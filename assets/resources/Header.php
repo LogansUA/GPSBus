@@ -8,6 +8,5 @@
 <link rel="icon" href="/web/images/icon.png">
 
 <link rel="stylesheet" media="screen" href="/web/css/style.css">
-
-<!-- Leaflet map -->
-<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+<link rel="stylesheet" href="../../web/css/Yeti%20Bootstrap/bootstrap.css">
+<link rel="stylesheet" href="../../web/css/Yeti%20Bootstrap/bootswatch.min.css">
