@@ -1,7 +1,7 @@
 $(document).ready(function() {
     var map = L.map('map', {
         layers: MQ.mapLayer()
-    }).setView([48.76375572, 31.62963867], 6);
+    }).setView([49.4105519, 26.9952585], 12);
 
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -9,20 +9,40 @@ $(document).ready(function() {
 
     var dir = MQ.routing.directions();
 
-    dir.route({
-        locations: [
-            { latLng: { lat: 49.443126, lng: 26.998456 } },
-            { latLng: { lat: 49.442019, lng: 26.994313 } },
-            { latLng: { lat: 49.426160, lng: 26.979069 } }
-        ]
-    });
+    var routeArray = [];
 
-    map.addLayer(MQ.routing.routeLayer({
-        directions: dir,
-        fitBounds: true,
-        draggable: false,
-        ribbonOptions: {
-            draggable: false
+    function mapClick(e) {
+        routeArray.push({
+            latitude: e.latlng.lat,
+            longitude: e.latlng.lng
+        });
+
+        var temp = [];
+
+        for (var i in routeArray) {
+            temp.push({
+                latLng: {
+                    lat: routeArray[i].latitude,
+                    lng: routeArray[i].longitude
+                }
+            });
         }
-    }));
+
+        dir.route({
+            locations: temp
+        });
+
+        map.addLayer(MQ.routing.routeLayer({
+            directions: dir,
+            fitBounds: true,
+            draggable: false,
+            ribbonOptions: {
+                draggable: false
+            }
+        }));
+
+        //$('#area-array').val(JSON.stringify(temp));
+    }
+
+    map.on('click', mapClick);
 });

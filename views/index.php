@@ -45,5 +45,7 @@ session_start();
             });
         });
     </script>
+
+    <input id="area-array" type="text" name="area" />
 </body>
 </html>
