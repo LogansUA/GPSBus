@@ -9,13 +9,27 @@ $(document).ready(function() {
 
     var dir = MQ.routing.directions();
 
-    var area = { latLng: { lat: 49.4105519, lng: 26.9952585 } };
+    var routeArray = [];
 
-    $('ul#route-list li a').click(function() {
-        area = $(this).data('area');
+    function mapClick(e) {
+        routeArray.push({
+            latitude: e.latlng.lat,
+            longitude: e.latlng.lng
+        });
+
+        var temp = [];
+
+        for (var i in routeArray) {
+            temp.push({
+                latLng: {
+                    lat: routeArray[i].latitude,
+                    lng: routeArray[i].longitude
+                }
+            });
+        }
 
         dir.route({
-            locations: area
+            locations: temp
         });
 
         map.addLayer(MQ.routing.routeLayer({
@@ -26,5 +40,9 @@ $(document).ready(function() {
                 draggable: false
             }
         }));
-    });
+
+        $('#route-area').val(JSON.stringify(temp));
+    }
+
+    map.on('click', mapClick);
 });
