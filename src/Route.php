@@ -21,11 +21,11 @@ class Route
     private $id;
 
     /**
-     * @var string $routeName Route Name
+     * @var string $name Route Name
      *
      * @Column(type="string")
      */
-    private $routeName;
+    private $name;
 
     /**
      * @var string
@@ -33,6 +33,13 @@ class Route
      * @Column(type="string")
      */
     private $stops;
+
+    /**
+     * @var array $area Area
+     *
+     * @Column(type="json_array")
+     */
+    private $area;
 
     /**
      * Get id
@@ -45,25 +52,25 @@ class Route
     }
 
     /**
-     * Get routeName
+     * Get name
      *
-     * @return string RouteName
+     * @return string Name
      */
-    public function getRouteName()
+    public function getName()
     {
-        return $this->routeName;
+        return $this->name;
     }
 
     /**
-     * Set routeName
+     * Set name
      *
-     * @param string $routeName routeName
+     * @param string $name name
      *
      * @return $this
      */
-    public function setRouteName($routeName)
+    public function setName($name)
     {
-        $this->routeName = $routeName;
+        $this->name = $name;
 
         return $this;
     }
@@ -88,6 +95,30 @@ class Route
     public function setStops($stops)
     {
         $this->stops = $stops;
+
+        return $this;
+    }
+
+    /**
+     * Get area
+     *
+     * @return array Area
+     */
+    public function getArea()
+    {
+        return $this->area;
+    }
+
+    /**
+     * Set area
+     *
+     * @param array $area area
+     *
+     * @return $this
+     */
+    public function setArea($area)
+    {
+        $this->area = $area;
 
         return $this;
     }

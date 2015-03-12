@@ -9,8 +9,8 @@ echo "<ul id='route-list' class='nav nav-pills nav-stacked'>";
 
 foreach ($routes as $route) {
     echo "<li class=''>" .
-             "<a role='button' data-route-id='" . $route->getId() . "' onclick=''>" .
-                 "<h4>" . $route->getRouteName() . "</h4>" .
+             "<a role='button' data-route-id='" . $route->getId() . "' data-area='" . $route->getArea() . "' onclick=''>" .
+                 "<h4>" . $route->getName() . "</h4>" .
                  "<p>" . $route->getStops() . "</p>" .
              "</a>" .
          "</li>";
