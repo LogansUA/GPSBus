@@ -16,9 +16,9 @@ session_start();
         <?php include_once("../../assets/resources/NavigationPanel.php"); ?>
     </header>
 
-    <div class="container" style="margin-top: 3%">
+    <div class="container main-content">
         <main>
-            <div style="float:left; width: 25%">
+            <div style="float: left; width: 25%">
                 <?php include_once("../../assets/resources/left_navbar.php"); ?>
             </div>
 
