@@ -42,6 +42,16 @@ class Route
     private $area;
 
     /**
+     * @var array $area Area
+     *
+     * @ManyToOne(targetEntity="Driver", inversedBy="idRoute")
+     * @JoinColumn(name="driver", referencedColumnName="idRoute")
+     *
+     * @Column(type="integer")
+     */
+    private $driver;
+
+    /**
      * Get id
      *
      * @return int Id
