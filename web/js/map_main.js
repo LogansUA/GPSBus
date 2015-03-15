@@ -9,8 +9,9 @@ $(document).ready(function() {
 
     var dir = MQ.routing.directions();
 
-    var area = { latLng: { lat: 49.4105519, lng: 26.9952585 } };
+    var area = $('ul#route-list li:first').children().data('area');
 
+    console.log(area);
     $('ul#route-list li a').click(function() {
         area = $(this).data('area');
 
@@ -27,4 +28,17 @@ $(document).ready(function() {
             }
         }));
     });
+
+    dir.route({
+        locations: area
+    });
+
+    map.addLayer(MQ.routing.routeLayer({
+        directions: dir,
+        fitBounds: true,
+        draggable: false,
+        ribbonOptions: {
+            draggable: false
+        }
+    }));
 });

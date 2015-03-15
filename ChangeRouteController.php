@@ -9,9 +9,9 @@ if (isset($_POST['submit'])) {
     if (empty($routeName) || empty($routeStops) || empty($routeArea)) {
         $errorCode = 2;
     } else {
-        $routeRepository = $entityManager->getRepository('Route');
-
-        $route = new Route();
+        $route = $entityManager->getRepository('Route')->findOneBy([
+            'name' => $routeName
+        ]);
 
         $route->setName($routeName)
             ->setStops($routeStops)

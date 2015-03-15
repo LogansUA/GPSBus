@@ -9,7 +9,7 @@ session_start();
 <head lang="en">
     <?php include_once("../assets/resources/Header.php"); ?>
 
-<!--    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />-->
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
     <title>Головна сторінка</title>
 </head>
 
@@ -28,13 +28,14 @@ session_start();
         <?php include_once("../assets/resources/Footer.php"); ?>
     </footer>
 
-<!--    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>-->
-<!---->
-<!--    <script src="http://www.mapquestapi.com/sdk/leaflet/v1.s/mq-map.js?key=Kmjtd%7Cluua2qu7n9%2C7a%3Do5-lzbgq"></script>-->
-<!--    <script src="http://www.mapquestapi.com/sdk/leaflet/v1.s/mq-routing.js?key=Kmjtd%7Cluua2qu7n9%2C7a%3Do5-lzbgq"></script>-->
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 
-<!--    <script src="../web/js/jquery.js"></script>-->
-<!--    <script src="../web/js/map_main.js"></script>-->
+    <script src="http://www.mapquestapi.com/sdk/leaflet/v1.s/mq-map.js?key=Kmjtd%7Cluua2qu7n9%2C7a%3Do5-lzbgq"></script>
+    <script src="http://www.mapquestapi.com/sdk/leaflet/v1.s/mq-routing.js?key=Kmjtd%7Cluua2qu7n9%2C7a%3Do5-lzbgq"></script>
+
+    <script src="../web/js/jquery.js"></script>
+    <script src="../web/js/map_main.js"></script>
+
     <script>
         $(document).ready(function() {
             $('ul#route-list li:first').addClass('active');
