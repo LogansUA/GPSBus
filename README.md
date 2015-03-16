@@ -1,6 +1,8 @@
 GPSBus
 ======
 
+[![Build Status](https://travis-ci.org/LogansUA/GPSBus.svg)](https://travis-ci.org/LogansUA/GPSBus)
+
 Simple service for monitoring the movement of buses
 
 Works with two apps for Android
