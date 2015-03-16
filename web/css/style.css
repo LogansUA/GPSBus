@@ -1,0 +1,122 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+.pad-top {
+    padding-top:40px;
+}
+
+.btn-login-color {
+    color: #fff;
+    background-color: #8daecd;
+    border-color: #a3c6e5;
+}
+
+.btn-registrate-color {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+.carousel .item {
+    /*background: url("../images/texture.jpg") center;*/
+    background-color: #19081d;
+}
+
+.white {
+    /*background-color: #ffffff;*/
+    color: #ffffff;
+}
+
+.black {
+    color: #000000;
+}
+
+#map {
+    width: 65%;
+    height: 450px;
+    background-color: #CCC;
+    float: right;
+}
+
+.main-panel {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+img.slide {
+    margin-bottom: 2%;
+}
+
+h1 {
+    font-size: 56px;
+}
+
+.getawayfromme {
+    margin-left: 5px;
+}
+
+i.lock {
+    padding-left: 3px;
+    padding-right: 2px;
+}
+
+i.tag {
+    padding-left: 1px;
+    padding-right: 2px;
+}
+
+i.name {
+    padding-right: 1px;
+}
+
+i.email {
+    padding-right: 1px;
+}
+
+a.headText, a.headText:hover {
+    text-decoration: none;
+    color: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+div.adaptiveContainer {
+    width: 90%;
+}
+
+div.adaptiveCol-MD-10 {
+    width: 70%;
+    padding: 0;
+}
+
+div.adaptiveCol-MD-2 {
+    width: 30%;
+}
+
+div.routeSpinner {
+    margin-right: 16%;
+}
+
+#route-list {
+    height: 475px;;
+    overflow-y: scroll;
+}
+
+input.textWidth {
+    width: 100%;
+}
+footer {
+    width: 100%;
+}
+
+.exit-button {
+    float: right;
+    margin-right: 1%;
+    width: 5%;
+}
+
+.main-content {
+    margin-top: 5%;
+}

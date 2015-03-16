@@ -8,62 +8,43 @@ session_start();
 <html>
 <head lang="en">
     <?php include_once("../assets/resources/Header.php"); ?>
+
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
     <title>Головна сторінка</title>
 </head>
 
 <body>
     <?php include_once("../assets/resources/NavigationPanel.php"); ?>
 
-    <div class="container adaptiveContainer">
-        <div class="container adaptiveContainer">
-            <!-- left, vertical navbar & content -->
-            <div class="row">
-                <!-- left, vertical navbar -->
-                <div class="adaptiveCol-MD-2 ">
-                    <div class="col-lg-10 routeSpinner">
-                        <label type="Text">Маршрут:</label>
-                        <div id="routeList" class="col-sm-4" style="width: 330px;">
-                            <div class="list-group">
-                                <?php include_once("../controllers/HomeController.php"); ?>
-                            </div>
-                        </div><!-- /.col-sm-4 -->
-
-                        <script>
-                            function onClick(element) {
-                                var optionValue = document.getElementsByTagName("h4")[element].innerHTML;
-                                var listItem = document.getElementById("routeList").getElementsByTagName("a");
-                                var it = document.getElementById("routeList").getElementsByClassName("list-group-item active");
-                                if (it.length !== 0) {
-                                    it[0].className = "list-group-item";
-                                }
-
-                                listItem[element].className += " active";
-                                displayRoute(optionValue);
-                            }
-                        </script>
-                    </div>
-                </div>
-                <!-- content -->
-                <div class="col-md-10 adaptiveCol-MD-10">
-                    <div id="map_canvas" class="map"></div>
-                </div>
-            </div>
+    <div class="main-content">
+        <div style="width: 330px; float: left; margin-left: 8%">
+            <label for="route-list">Маршрут</label>
+            <?php include_once("../HomeController.php"); ?>
         </div>
-        <hr/>
-        <footer>
-            <p>© Company 2014</p>
-        </footer>
-    </div> <!-- /container -->
+        <div id="map" style="float: right; margin: 2% 2% 0 0"></div>
+    </div>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../web/js/jquery.min.js"></script>
-    <script src="../web/js/bootstrap.min.js"></script>
-
-    <script type="text/javascript" src="../web/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../web/js/spinners.js"></script>
+    <footer>
+        <?php include_once("../assets/resources/Footer.php"); ?>
+    </footer>
 
     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+
+    <script src="http://www.mapquestapi.com/sdk/leaflet/v1.s/mq-map.js?key=Kmjtd%7Cluua2qu7n9%2C7a%3Do5-lzbgq"></script>
+    <script src="http://www.mapquestapi.com/sdk/leaflet/v1.s/mq-routing.js?key=Kmjtd%7Cluua2qu7n9%2C7a%3Do5-lzbgq"></script>
+
+    <script src="../web/js/jquery.js"></script>
+    <script src="../web/js/map_main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('ul#route-list li:first').addClass('active');
+
+            $('ul#route-list li').click(function() {
+                $('li.active').removeClass('active');
+                $(this).addClass('active');
+            });
+        });
+    </script>
 </body>
 </html>

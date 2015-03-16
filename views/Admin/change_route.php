@@ -17,7 +17,7 @@ session_start();
         <?php include_once("../../assets/resources/NavigationPanel.php"); ?>
 
         <div class="main-content">
-            <div style="margin-left: 2%; margin-right: 2%">
+            <div style="margin-left: 8%; margin-right: 5%">
                 <div id="left-navbar" class="list-group">
                     <a href="index.php" class="list-group-item">Створити маршрут</a>
                     <a href="change_route.php" class="list-group-item">Змінити маршрут</a>
@@ -38,16 +38,14 @@ session_start();
                 </script>
             </div>
 
-            <div class="well bs-component" style="float: left; margin-left: 2%; width: 30%">
+            <div style="width: 330px; float: left; margin-left: 8%">
+                <label for="route-list">Маршрут</label>
+                <?php include_once("../../HomeController.php"); ?>
+            </div>
+
+            <div class="well bs-component" style="float: left; margin-left: 2%; width: 60%">
                 <form class="form-horizontal" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                     <fieldset>
-                        <legend><strong>Створення маршруту</strong></legend>
-                        <div class="form-group">
-                            <label for="comment" class="col-lg-2 control-label"></label>
-                            <div class="col-lg-10">
-                                <p id="comment">Відмітьте маршрут на мапі</p>
-                            </div>
-                        </div>
                         <div class="form-group">
                             <label for="route-name" class="col-lg-2 control-label">Номер маршруту</label>
                             <div class="col-lg-10">
@@ -64,7 +62,7 @@ session_start();
                         <input id="route-area" type="hidden" name="route-area" />
 
                         <div>
-                            <?php include_once("../../AdminController.php"); ?>
+                            <?php include_once("../../ChangeRouteController.php"); ?>
                         </div>
 
                         <div class="form-group">
@@ -77,7 +75,7 @@ session_start();
                 </form>
             </div>
 
-            <div id="map" style="float: right; margin: 0 2% 0 0"></div>
+            <div id="map" style="float: right; margin: 0 6% 0 0; width: 805px; height: 300px"></div>
         </div>
 
         <footer>
@@ -96,6 +94,18 @@ session_start();
             $(document).ready(function() {
                 $('#main-button').removeClass('active');
                 $('#admin-panel-button').addClass('active');
+
+                $('ul#route-list li:first').addClass('active');
+                $('#route-name').val($('ul#route-list li:first').children().children('h4').text());
+                $('#route-stops').val($('ul#route-list li:first').children().children('p').text());
+
+                $('ul#route-list li').click(function() {
+                    $('li.active').removeClass('active');
+                    $(this).addClass('active');
+
+                    $('#route-name').val($(this).children().children('h4').text());
+                    $('#route-stops').val($(this).children().children('p').text());
+                });
             });
         </script>
     </body>

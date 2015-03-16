@@ -9,9 +9,9 @@ class CheckClass
 
     public function entryIntoService() {
         if (isset($_POST['signin'])) {
-            htmlRedirect("../views/SignIn/signin.php");
+            htmlRedirect("SignIn/signin.php");
         } elseif (isset($_POST['signup'])) {
-            htmlRedirect("../views/SignUp/signup.php");
+            htmlRedirect("SignUp/signup.php");
         }
     }
 

@@ -9,61 +9,63 @@ include_once("../../assets/redirect.php");
     <title>Реєстрація</title>
 </head>
 
-<body style="padding-top: 0;">
+<body>
     <div>
         <a href="../">
             <img class="exit-button" src="../../web/images/exit.svg" alt="Exit" />
         </a>
     </div>
 
-    <div class="container">
-        <div class="row text-center pad-top">
-            <div class="col-md-12">
-                <h2><a href="<?php echo $_SERVER['PHP_SELF']; ?>" class="headText">Сторінка реєстрації</a></h2>
-            </div>
-        </div>
-
-        <div class="row  pad-top">
-            <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <strong>Реєстрація</strong>
-                    </div>
-                    <div class="panel-body">
-                        <form class="form-signin" role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-                            <br/>
-                            <div class="form-group input-group">
-                                <span class="input-group-addon"><i class="fa fa-circle-o-notch name"  ></i></span>
-                                <input type="text" class="form-control" placeholder="Ім’я" name="firstName" />
-                            </div>
-                            <div class="form-group input-group">
-                                <span class="input-group-addon"><i class="fa fa-tag tag"  ></i></span>
-                                <input type="text" class="form-control" placeholder="Нікнейм" name="nickName" />
-                            </div>
-                            <div class="form-group input-group">
-                                <span class="input-group-addon"><i class="email">@</i></span>
-                                <input type="text" class="form-control" placeholder="Email" name="email" />
-                            </div>
-                            <div class="form-group input-group">
-                                <span class="input-group-addon"><i class="fa fa-lock lock"  ></i></span>
-                                <input type="password" class="form-control" placeholder="Пароль" name="password" />
-                            </div>
-                            <div class="form-group input-group">
-                                <span class="input-group-addon"><i class="fa fa-lock lock"  ></i></span>
-                                <input type="password" class="form-control" placeholder="Повторіть пароль" name="rePassword" />
-                            </div>
-                            <?php
-                            include_once("../../controllers/SignUpController.php");
-                            ?>
-                            <button class="btn btn-lg btn-primary btn-block" type="submit" name="sign_up" value="#">Зареєструватися</button>
-
-                            <hr />
-                            Вже зареєстровані? <a href="../SignIn/signin.php">Тоді заходьте!</a>
-                        </form>
+    <div class="well bs-component" style="margin: 3% 35% 0 35%;">
+        <form class="form-horizontal" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            <fieldset>
+                <legend><strong>Реєстрація</strong></legend>
+                <div class="form-group">
+                    <label for="firstName" class="col-lg-2 control-label">Ім’я</label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" id="firstName" placeholder="Ім’я" name="first-name">
                     </div>
                 </div>
-            </div>
-        </div>
+                <div class="form-group">
+                    <label for="lastName" class="col-lg-2 control-label">Прізвище</label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" id="lastName" placeholder="Прізвище" name="last-name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail" class="col-lg-2 control-label">Імейл</label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" id="inputEmail" placeholder="Імейл" name="email" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword" class="col-lg-2 control-label">Пароль</label>
+                    <div class="col-lg-10">
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Пароль" name="password" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="re-password" class="col-lg-2 control-label">Повторіть пароль</label>
+                    <div class="col-lg-10">
+                        <input type="password" class="form-control" id="re-password" placeholder="Повторіть пароль" name="re-password">
+                    </div>
+                </div>
+
+                <div>
+                    <?php include_once("../../SignUpController.php"); ?>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                        <button type="reset" class="btn btn-default">Cancel</button>
+                        <button type="submit" class="btn btn-primary" name="sign-up">Submit</button>
+                    </div>
+                </div>
+
+                <hr />
+                <p>Вже зареєстровані? <a href="../SignIn/signin.php">Тоді заходьте!</a></p>
+            </fieldset>
+        </form>
     </div>
 </body>
 </html>
