@@ -11,11 +11,15 @@ $(document).ready(function() {
 
     var routeArray = [];
 
+    var currentLayer = null;
+
     function mapClick(e) {
         routeArray.push({
             latitude: e.latlng.lat,
             longitude: e.latlng.lng
         });
+
+        //map.removeLayer(currentLayer);
 
         var temp = [];
 
@@ -32,13 +36,13 @@ $(document).ready(function() {
             locations: temp
         });
 
-        map.addLayer(MQ.routing.routeLayer({
+        currentLayer = map.addLayer(MQ.routing.routeLayer({
             directions: dir,
-            fitBounds: true,
-            draggable: false,
-            ribbonOptions: {
-                draggable: false
-            }
+            fitBounds: true
+            //draggable: true,
+            //ribbonOptions: {
+            //    draggable: true
+            //}
         }));
 
         $('#route-area').val(JSON.stringify(temp));

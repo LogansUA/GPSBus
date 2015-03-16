@@ -52,16 +52,6 @@ class Driver
     private $gender;
 
     /**
-     * @var int $idRoute Id Route
-     *
-     * @OneToMany(targetEntity="Route", mappedBy="driver", cascade={"persist", "remove"}, orphanRemoval=true)
-     * @JoinColumn(onDelete="CASCADE")
-     *
-     * @Column(type="integer", nullable=true)
-     */
-    private $idRoute;
-
-    /**
      * @var string $role Role
      *
      * @Column(type="string")
