@@ -44,6 +44,9 @@ switch($errorCode) {
         break;
 }
 
+/**
+ * @param $user Driver Driver
+ */
 function fillSession($user)
 {
     $_SESSION['idDriver']  = $user->getId();
