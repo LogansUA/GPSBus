@@ -48,7 +48,6 @@
                     if (isset($_POST['exit'])) {
                         if (isset($_SESSION['idDriver'])) {
                             session_destroy();
-                            /* TODO: Create normal redirect from profile to home */
                             phpRedirect('../index.php');
                         }
                     }

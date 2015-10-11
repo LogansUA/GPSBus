@@ -1,9 +1,31 @@
 {
-  "require": {
-    "doctrine/orm": "2.4.*",
-    "symfony/yaml": "2.*"
-  },
-  "autoload": {
-    "psr-0": {"": "src/"}
-  }
+    "name": "logansua/gpsbus",
+    "description": "Simple service for monitoring the movement of buses.",
+    "keywords": ["gps", "bus", "social", "help", "service", "geo", "maps"],
+    "homepage": "https://github.com/LogansUA/GPSBus",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+          "name": "Oleg Kachinsky",
+          "email": "logansoleg@gmail.com",
+          "role": "Developer"
+        },
+        {
+          "name": "Community",
+          "homepage": "https://github.com/LogansUA/GPSBus/graphs/contributors",
+          "role": "Developers"
+        }
+    ],
+    "support": {
+        "email": "logansoleg@gmail.com",
+        "issues": "https://github.com/LogansUA/GPSBus/issues"
+    },
+    "require": {
+        "doctrine/orm": "2.4.*",
+        "symfony/yaml": "2.*"
+    },
+    "autoload": {
+        "psr-0": {"": "src/"}
+    }
 }

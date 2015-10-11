@@ -14,25 +14,5 @@ class CheckClass
             htmlRedirect("SignUp/signup.php");
         }
     }
-
-    public function isNewUser($email, $emailArray) {
-        for ($i = 0; $i < count($emailArray); $i++) {
-            if ($email == $emailArray[$i]) {
-                return false;
-            }
-        }
-
-        return true;
-    }
-
-    public function isRegistered($email, $emailArray, $password = array(), $passwordArray = array()) {
-        for ($i = 0; $i < count($emailArray); $i++) {
-            if (($emailArray[$i] == $email) && ($passwordArray[$i] == $password)) {
-                return true;
-            }
-        }
-
-        return false;
-    }
 }
 
